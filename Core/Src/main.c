@@ -26,6 +26,7 @@
 
 #include "../../ssd1306/ssd1306.h"
 #include "../../ssd1306/FIRFilter.h"
+#include "../../ssd1306/mpu6050.h"
 #include "math.h"
 #include "stdio.h"
 
@@ -76,28 +77,19 @@ static float angle_yx = 0;
 static float angle_xz = 0;
 static float angle_yz = 0;
 
+typedef struct
+{
+	float yx;
+	float xz;
+	float yz;
+} ANGLES;
 
-//	MPU6050 registers
+ANGLES angle;
 
-const uint8_t mpu6050_adr = 0x68;
 
-const uint8_t reg_pwrmngt1 = 0x6B;
-const uint8_t accel_xout_h_reg = 0x3B;
-const uint8_t who_am_i = 0x75;
 
-//	Gyro and accel data variables
 
-static uint8_t Rec_Data[14];
-
-static int16_t Accel_X_RAW = 0, Accel_Y_RAW = 0, Accel_Z_RAW = 0;
-
-//int16_t Gyro_X_RAW = 0, Gyro_Y_RAW = 0, Gyro_Z_RAW = 0;
-//int16_t offset_gx = 0, offset_gy = 0, offset_gz = 0;
-
-//int16_t Temp_RAW = 0;
-
-static float ax = 0, ay = 0, az = 0;
-//float gx = 0, gy = 0, gz = 0;
+static MPU6050 mpu6050;
 
 
 /* USER CODE END PV */
@@ -167,7 +159,7 @@ int main(void)
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
 
-
+  mpu6050_Init(&mpu6050);
   ssd1306_Init();
 
   ssd1306_Fill(Black);
@@ -181,7 +173,7 @@ int main(void)
 
   HAL_Delay(3000);
 
-  HAL_I2C_Mem_Write(&hi2c1, (mpu6050_adr<<1) | 0, reg_pwrmngt1, 1, 0x00, 1, 100);
+  HAL_I2C_Mem_Write(&hi2c1, (MPU6050_ADDRESS<<1) | 0, PWRMNGT1_REG, 1, 0x00, 1, 100);
 
   HAL_TIM_Base_Start_IT(&htim3);
 
@@ -556,21 +548,13 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
 
 	if(htim->Instance==TIM3)	//	Si intrerrupcion proviene de TIM3 -> lectura de MPU6050
 	{
-		HAL_I2C_Mem_Read(&hi2c1, (mpu6050_adr<<1) | 0, accel_xout_h_reg, 1, Rec_Data, 6, 1000);
+		mpu6050_Get_Accel(&mpu6050);
 
-		Accel_X_RAW = (Rec_Data[0] << 8 | Rec_Data [1]);
-		Accel_Y_RAW = (Rec_Data[2] << 8 | Rec_Data [3]);
-		Accel_Z_RAW = (Rec_Data[4] << 8 | Rec_Data [5]);
+		FIRFilter_Update(&az_filter, mpu6050.accel_z);
 
-		ax = (float)Accel_X_RAW / 16384.0;
-		ay = (float)Accel_Y_RAW / 16384.0;
-		az = (float)Accel_Z_RAW / 16384.0;
-
-		FIRFilter_Update(&az_filter, az);
-
-		angle_yx = -1*(atan2(ay,ax)*180)/PI;
-		angle_xz = (atan2(ax,az)*180)/PI;
-		angle_yz = -1*(atan2(ay,az)*180)/PI;
+		angle_yx = -1*(atan2(mpu6050.accel_y,mpu6050.accel_x)*180)/PI;
+		angle_xz = (atan2(mpu6050.accel_x,mpu6050.accel_z)*180)/PI;
+		angle_yz = -1*(atan2(mpu6050.accel_y,mpu6050.accel_z)*180)/PI;
 
 		angle_yx = FIRFilter_Update(&angle_yx_filter, angle_yx);
 		angle_xz = FIRFilter_Update(&angle_xz_filter, angle_xz);

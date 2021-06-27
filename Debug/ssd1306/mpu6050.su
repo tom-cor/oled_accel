@@ -1,0 +1,2 @@
+mpu6050.c:12:6:mpu6050_Init	16	static
+mpu6050.c:25:6:mpu6050_Get_Accel	32	static

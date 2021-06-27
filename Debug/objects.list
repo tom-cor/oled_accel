@@ -23,5 +23,6 @@
 "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o"
 "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o"
 "ssd1306/FIRFilter.o"
+"ssd1306/mpu6050.o"
 "ssd1306/ssd1306.o"
 "ssd1306/ssd1306_fonts.o"
