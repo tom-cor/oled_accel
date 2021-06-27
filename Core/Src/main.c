@@ -67,15 +67,13 @@ UART_HandleTypeDef huart1;
 
 char display_mode = 0;
 
+static MPU6050 mpu6050;
+
 static FIRFilter az_filter;	//	Acc_Z filtered
 
 static FIRFilter angle_yx_filter;
 static FIRFilter angle_xz_filter;
 static FIRFilter angle_yz_filter;
-
-static float angle_yx = 0;
-static float angle_xz = 0;
-static float angle_yz = 0;
 
 typedef struct
 {
@@ -87,9 +85,6 @@ typedef struct
 ANGLES angle;
 
 
-
-
-static MPU6050 mpu6050;
 
 
 /* USER CODE END PV */
@@ -171,9 +166,7 @@ int main(void)
   ssd1306_WriteString("Tomas Cornaglia", Font_7x10, White);
   ssd1306_UpdateScreen();
 
-  HAL_Delay(3000);
-
-  HAL_I2C_Mem_Write(&hi2c1, (MPU6050_ADDRESS<<1) | 0, PWRMNGT1_REG, 1, 0x00, 1, 100);
+  HAL_Delay(1000);
 
   HAL_TIM_Base_Start_IT(&htim3);
 
@@ -192,11 +185,11 @@ int main(void)
 	switch(display_mode)
 	{
 		case 1:
-			bubbleLevel_1d(angle_yx);
+			bubbleLevel_1d(angle.yx);
 			break;
 
 		case 2:
-			bubbleLevel_2d(angle_yz, angle_xz);
+			bubbleLevel_2d(angle.yz, angle.xz);
 			break;
 	}
 
@@ -552,13 +545,13 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
 
 		FIRFilter_Update(&az_filter, mpu6050.accel_z);
 
-		angle_yx = -1*(atan2(mpu6050.accel_y,mpu6050.accel_x)*180)/PI;
-		angle_xz = (atan2(mpu6050.accel_x,mpu6050.accel_z)*180)/PI;
-		angle_yz = -1*(atan2(mpu6050.accel_y,mpu6050.accel_z)*180)/PI;
+		angle.yx = -1*(atan2(mpu6050.accel_y,mpu6050.accel_x)*180)/PI;
+		angle.xz = (atan2(mpu6050.accel_x,mpu6050.accel_z)*180)/PI;
+		angle.yz = -1*(atan2(mpu6050.accel_y,mpu6050.accel_z)*180)/PI;
 
-		angle_yx = FIRFilter_Update(&angle_yx_filter, angle_yx);
-		angle_xz = FIRFilter_Update(&angle_xz_filter, angle_xz);
-		angle_yz = FIRFilter_Update(&angle_yz_filter, angle_yz);
+		angle.yx = FIRFilter_Update(&angle_yx_filter, angle.yx);
+		angle.xz = FIRFilter_Update(&angle_xz_filter, angle.xz);
+		angle.yz = FIRFilter_Update(&angle_yz_filter, angle.yz);
 	}
 
 }
@@ -675,7 +668,7 @@ static void bubbleLevel_2d(float angle_xz, float angle_yz)
 	//	FIN CONVERSION A COORDENADAS POLARES
 
 	ssd1306_Fill(!COLOR);
-	ssd1306_DrawCircle(95, 32, 31, White);
+	ssd1306_DrawCircle(95, 32, 31, COLOR);
 	//ssd1306_DrawRectangle(63, 1, 126, 63, COLOR);	//	Descomentar en caso de no usar coordenadas polares
 	ssd1306_Line(64, 32, 126, 32, COLOR);
 	ssd1306_Line(95, 1, 95, 63, COLOR);
