@@ -63,40 +63,41 @@ UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
 
-char display_mode = 1;
 
-FIRFilter az_filter;	//	Acc_Z filtered
+char display_mode = 0;
 
-FIRFilter angle_yx_filter;
-FIRFilter angle_xz_filter;
-FIRFilter angle_yz_filter;
+static FIRFilter az_filter;	//	Acc_Z filtered
 
-double angle_yx = 0;
-double angle_xz = 0;
-double angle_yz = 0;
+static FIRFilter angle_yx_filter;
+static FIRFilter angle_xz_filter;
+static FIRFilter angle_yz_filter;
+
+static float angle_yx = 0;
+static float angle_xz = 0;
+static float angle_yz = 0;
 
 
 //	MPU6050 registers
 
-uint8_t mpu6050_adr = 0x68;
+const uint8_t mpu6050_adr = 0x68;
 
-uint8_t reg_pwrmngt1 = 0x6B;
-uint8_t accel_xout_h_reg = 0x3B;
-uint8_t who_am_i = 0x75;
+const uint8_t reg_pwrmngt1 = 0x6B;
+const uint8_t accel_xout_h_reg = 0x3B;
+const uint8_t who_am_i = 0x75;
 
 //	Gyro and accel data variables
 
-uint8_t Rec_Data[14];
+static uint8_t Rec_Data[14];
 
-int16_t Accel_X_RAW = 0, Accel_Y_RAW = 0, Accel_Z_RAW = 0;
+static int16_t Accel_X_RAW = 0, Accel_Y_RAW = 0, Accel_Z_RAW = 0;
 
 //int16_t Gyro_X_RAW = 0, Gyro_Y_RAW = 0, Gyro_Z_RAW = 0;
 //int16_t offset_gx = 0, offset_gy = 0, offset_gz = 0;
 
 //int16_t Temp_RAW = 0;
 
-double ax = 0, ay = 0, az = 0;
-//double gx = 0, gy = 0, gz = 0;
+static float ax = 0, ay = 0, az = 0;
+//float gx = 0, gy = 0, gz = 0;
 
 
 /* USER CODE END PV */
@@ -114,8 +115,8 @@ static void MX_TIM3_Init(void);
 
 
 //static void bubbleLevel_ArtifHorizon(int16_t angle);
-static void bubbleLevel_2d(double angle_xz, double angle_yz);
-static void bubbleLevel_1d(double angle);
+static void bubbleLevel_2d(float angle_xz, float angle_yz);
+static void bubbleLevel_1d(float angle);
 
 
 /* USER CODE END PFP */
@@ -142,6 +143,11 @@ int main(void)
 
   /* USER CODE BEGIN Init */
 
+
+  FIRFilter_Init(&az_filter);
+  FIRFilter_Init(&angle_yx_filter);
+
+
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -162,29 +168,22 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
 
-
-
-  HAL_I2C_Mem_Write(&hi2c1, (mpu6050_adr<<1) | 0, reg_pwrmngt1, 1, 0x00, 1, 100);
-
-  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_SET);
-
-  ssd1306_Init();
-
-  FIRFilter_Init(&az_filter);
-  FIRFilter_Init(&angle_yx_filter);
-
-  HAL_TIM_Base_Start_IT(&htim3);
-
   ssd1306_Fill(Black);
-  ssd1306_SetCursor(1, 1);
+  ssd1306_SetCursor(1, 11);
   ssd1306_WriteString("Proyecto final", Font_7x10, White);
-  ssd1306_SetCursor(1, 15);
+  ssd1306_SetCursor(1, 27);
   ssd1306_WriteString("Sistemas Embebidos", Font_7x10, White);
-  ssd1306_SetCursor(1, 29);
+  ssd1306_SetCursor(1, 43);
   ssd1306_WriteString("Tomas Cornaglia", Font_7x10, White);
   ssd1306_UpdateScreen();
 
   HAL_Delay(3000);
+
+  HAL_I2C_Mem_Write(&hi2c1, (mpu6050_adr<<1) | 0, reg_pwrmngt1, 1, 0x00, 1, 100);
+
+  ssd1306_Init();
+
+  HAL_TIM_Base_Start_IT(&htim3);
 
 
   /* USER CODE END 2 */
@@ -518,7 +517,7 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_SET);
 
   /*Configure GPIO pin : PC13 */
   GPIO_InitStruct.Pin = GPIO_PIN_13;
@@ -618,7 +617,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
 //}
 
 
-static void bubbleLevel_1d(double angle)
+static void bubbleLevel_1d(float angle)
 {
 
 	#define COLOR	1
@@ -655,7 +654,7 @@ static void bubbleLevel_1d(double angle)
 
 }
 
-static void bubbleLevel_2d(double angle_xz, double angle_yz)
+static void bubbleLevel_2d(float angle_xz, float angle_yz)
 {
 
 	#define COLOR 	1
@@ -675,8 +674,8 @@ static void bubbleLevel_2d(double angle_xz, double angle_yz)
 
 	//	CONVERSION A COORDENADAS POLARES
 
-	double radius;
-	double theta;
+	float radius;
+	float theta;
 
 	//radius = sqrt(pow(angle_yz, 2) + pow(angle_xz, 2));
 	radius = sqrt(angle_yz*angle_yz + angle_xz*angle_xz);
