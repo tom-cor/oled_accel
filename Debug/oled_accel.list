@@ -1520,65 +1520,65 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
 
+  ssd1306_Init();
+ 8001146:	f004 f879 	bl	800523c <ssd1306_Init>
+
   ssd1306_Fill(Black);
- 8001146:	2000      	movs	r0, #0
- 8001148:	f004 f8e2 	bl	8005310 <ssd1306_Fill>
+ 800114a:	2000      	movs	r0, #0
+ 800114c:	f004 f8e0 	bl	8005310 <ssd1306_Fill>
   ssd1306_SetCursor(1, 11);
- 800114c:	210b      	movs	r1, #11
- 800114e:	2001      	movs	r0, #1
- 8001150:	f004 fa44 	bl	80055dc <ssd1306_SetCursor>
+ 8001150:	210b      	movs	r1, #11
+ 8001152:	2001      	movs	r0, #1
+ 8001154:	f004 fa42 	bl	80055dc <ssd1306_SetCursor>
   ssd1306_WriteString("Proyecto final", Font_7x10, White);
- 8001154:	4a40      	ldr	r2, [pc, #256]	; (8001258 <main+0x148>)
- 8001156:	2301      	movs	r3, #1
- 8001158:	ca06      	ldmia	r2, {r1, r2}
- 800115a:	4840      	ldr	r0, [pc, #256]	; (800125c <main+0x14c>)
- 800115c:	f004 fa18 	bl	8005590 <ssd1306_WriteString>
+ 8001158:	4a3f      	ldr	r2, [pc, #252]	; (8001258 <main+0x148>)
+ 800115a:	2301      	movs	r3, #1
+ 800115c:	ca06      	ldmia	r2, {r1, r2}
+ 800115e:	483f      	ldr	r0, [pc, #252]	; (800125c <main+0x14c>)
+ 8001160:	f004 fa16 	bl	8005590 <ssd1306_WriteString>
   ssd1306_SetCursor(1, 27);
- 8001160:	211b      	movs	r1, #27
- 8001162:	2001      	movs	r0, #1
- 8001164:	f004 fa3a 	bl	80055dc <ssd1306_SetCursor>
+ 8001164:	211b      	movs	r1, #27
+ 8001166:	2001      	movs	r0, #1
+ 8001168:	f004 fa38 	bl	80055dc <ssd1306_SetCursor>
   ssd1306_WriteString("Sistemas Embebidos", Font_7x10, White);
- 8001168:	4a3b      	ldr	r2, [pc, #236]	; (8001258 <main+0x148>)
- 800116a:	2301      	movs	r3, #1
- 800116c:	ca06      	ldmia	r2, {r1, r2}
- 800116e:	483c      	ldr	r0, [pc, #240]	; (8001260 <main+0x150>)
- 8001170:	f004 fa0e 	bl	8005590 <ssd1306_WriteString>
+ 800116c:	4a3a      	ldr	r2, [pc, #232]	; (8001258 <main+0x148>)
+ 800116e:	2301      	movs	r3, #1
+ 8001170:	ca06      	ldmia	r2, {r1, r2}
+ 8001172:	483b      	ldr	r0, [pc, #236]	; (8001260 <main+0x150>)
+ 8001174:	f004 fa0c 	bl	8005590 <ssd1306_WriteString>
   ssd1306_SetCursor(1, 43);
- 8001174:	212b      	movs	r1, #43	; 0x2b
- 8001176:	2001      	movs	r0, #1
- 8001178:	f004 fa30 	bl	80055dc <ssd1306_SetCursor>
+ 8001178:	212b      	movs	r1, #43	; 0x2b
+ 800117a:	2001      	movs	r0, #1
+ 800117c:	f004 fa2e 	bl	80055dc <ssd1306_SetCursor>
   ssd1306_WriteString("Tomas Cornaglia", Font_7x10, White);
- 800117c:	4a36      	ldr	r2, [pc, #216]	; (8001258 <main+0x148>)
- 800117e:	2301      	movs	r3, #1
- 8001180:	ca06      	ldmia	r2, {r1, r2}
- 8001182:	4838      	ldr	r0, [pc, #224]	; (8001264 <main+0x154>)
- 8001184:	f004 fa04 	bl	8005590 <ssd1306_WriteString>
+ 8001180:	4a35      	ldr	r2, [pc, #212]	; (8001258 <main+0x148>)
+ 8001182:	2301      	movs	r3, #1
+ 8001184:	ca06      	ldmia	r2, {r1, r2}
+ 8001186:	4837      	ldr	r0, [pc, #220]	; (8001264 <main+0x154>)
+ 8001188:	f004 fa02 	bl	8005590 <ssd1306_WriteString>
   ssd1306_UpdateScreen();
- 8001188:	f004 f8e4 	bl	8005354 <ssd1306_UpdateScreen>
+ 800118c:	f004 f8e2 	bl	8005354 <ssd1306_UpdateScreen>
 
   HAL_Delay(3000);
- 800118c:	f640 30b8 	movw	r0, #3000	; 0xbb8
- 8001190:	f001 f8f4 	bl	800237c <HAL_Delay>
+ 8001190:	f640 30b8 	movw	r0, #3000	; 0xbb8
+ 8001194:	f001 f8f2 	bl	800237c <HAL_Delay>
 
   HAL_I2C_Mem_Write(&hi2c1, (mpu6050_adr<<1) | 0, reg_pwrmngt1, 1, 0x00, 1, 100);
- 8001194:	2368      	movs	r3, #104	; 0x68
- 8001196:	b29b      	uxth	r3, r3
- 8001198:	005b      	lsls	r3, r3, #1
- 800119a:	b299      	uxth	r1, r3
- 800119c:	236b      	movs	r3, #107	; 0x6b
- 800119e:	b29a      	uxth	r2, r3
- 80011a0:	2364      	movs	r3, #100	; 0x64
- 80011a2:	9302      	str	r3, [sp, #8]
- 80011a4:	2301      	movs	r3, #1
- 80011a6:	9301      	str	r3, [sp, #4]
- 80011a8:	2300      	movs	r3, #0
- 80011aa:	9300      	str	r3, [sp, #0]
- 80011ac:	2301      	movs	r3, #1
- 80011ae:	482e      	ldr	r0, [pc, #184]	; (8001268 <main+0x158>)
- 80011b0:	f001 ff00 	bl	8002fb4 <HAL_I2C_Mem_Write>
-
-  ssd1306_Init();
- 80011b4:	f004 f842 	bl	800523c <ssd1306_Init>
+ 8001198:	2368      	movs	r3, #104	; 0x68
+ 800119a:	b29b      	uxth	r3, r3
+ 800119c:	005b      	lsls	r3, r3, #1
+ 800119e:	b299      	uxth	r1, r3
+ 80011a0:	236b      	movs	r3, #107	; 0x6b
+ 80011a2:	b29a      	uxth	r2, r3
+ 80011a4:	2364      	movs	r3, #100	; 0x64
+ 80011a6:	9302      	str	r3, [sp, #8]
+ 80011a8:	2301      	movs	r3, #1
+ 80011aa:	9301      	str	r3, [sp, #4]
+ 80011ac:	2300      	movs	r3, #0
+ 80011ae:	9300      	str	r3, [sp, #0]
+ 80011b0:	2301      	movs	r3, #1
+ 80011b2:	482d      	ldr	r0, [pc, #180]	; (8001268 <main+0x158>)
+ 80011b4:	f001 fefe 	bl	8002fb4 <HAL_I2C_Mem_Write>
 
   HAL_TIM_Base_Start_IT(&htim3);
  80011b8:	482c      	ldr	r0, [pc, #176]	; (800126c <main+0x15c>)
@@ -1619,7 +1619,7 @@ int main(void)
  80011e8:	bf00      	nop
 	}
 
-	if( (az_filter.out < 0.2) && (display_mode != 1)  )	// Revisar como evaluar que el timer ya está corriendo, cosa de no iniciarlo más de una vez.
+	if( (az_filter.out < 0.3) && (display_mode != 1)  )	// Revisar como evaluar que el timer ya está corriendo, cosa de no iniciarlo más de una vez.
  80011ea:	4b19      	ldr	r3, [pc, #100]	; (8001250 <main+0x140>)
  80011ec:	f8d3 3084 	ldr.w	r3, [r3, #132]	; 0x84
  80011f0:	4618      	mov	r0, r3
@@ -1638,7 +1638,7 @@ int main(void)
  800120e:	481c      	ldr	r0, [pc, #112]	; (8001280 <main+0x170>)
  8001210:	f003 faac 	bl	800476c <HAL_TIM_Base_Start_IT>
 
-	if( (az_filter.out > 0.8) && (display_mode != 2) )
+	if( (az_filter.out > 0.7) && (display_mode != 2) )
  8001214:	4b0e      	ldr	r3, [pc, #56]	; (8001250 <main+0x140>)
  8001216:	f8d3 3084 	ldr.w	r3, [r3, #132]	; 0x84
  800121a:	4618      	mov	r0, r3
@@ -1658,10 +1658,10 @@ int main(void)
  800123a:	f003 fa97 	bl	800476c <HAL_TIM_Base_Start_IT>
 	switch(display_mode)
  800123e:	e7be      	b.n	80011be <main+0xae>
- 8001240:	9999999a 	.word	0x9999999a
- 8001244:	3fc99999 	.word	0x3fc99999
- 8001248:	9999999a 	.word	0x9999999a
- 800124c:	3fe99999 	.word	0x3fe99999
+ 8001240:	33333333 	.word	0x33333333
+ 8001244:	3fd33333 	.word	0x3fd33333
+ 8001248:	66666666 	.word	0x66666666
+ 800124c:	3fe66666 	.word	0x3fe66666
  8001250:	20000294 	.word	0x20000294
  8001254:	2000031c 	.word	0x2000031c
  8001258:	20000090 	.word	0x20000090
@@ -2074,17 +2074,17 @@ static void MX_TIM2_Init(void)
  800148c:	4b1e      	ldr	r3, [pc, #120]	; (8001508 <MX_TIM2_Init+0x98>)
  800148e:	f04f 4280 	mov.w	r2, #1073741824	; 0x40000000
  8001492:	601a      	str	r2, [r3, #0]
-  htim2.Init.Prescaler = 10000;
+  htim2.Init.Prescaler = 7200;
  8001494:	4b1c      	ldr	r3, [pc, #112]	; (8001508 <MX_TIM2_Init+0x98>)
- 8001496:	f242 7210 	movw	r2, #10000	; 0x2710
+ 8001496:	f44f 52e1 	mov.w	r2, #7200	; 0x1c20
  800149a:	605a      	str	r2, [r3, #4]
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
  800149c:	4b1a      	ldr	r3, [pc, #104]	; (8001508 <MX_TIM2_Init+0x98>)
  800149e:	2200      	movs	r2, #0
  80014a0:	609a      	str	r2, [r3, #8]
-  htim2.Init.Period = 7200;
+  htim2.Init.Period = 10000;
  80014a2:	4b19      	ldr	r3, [pc, #100]	; (8001508 <MX_TIM2_Init+0x98>)
- 80014a4:	f44f 52e1 	mov.w	r2, #7200	; 0x1c20
+ 80014a4:	f242 7210 	movw	r2, #10000	; 0x2710
  80014a8:	60da      	str	r2, [r3, #12]
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
  80014aa:	4b17      	ldr	r3, [pc, #92]	; (8001508 <MX_TIM2_Init+0x98>)
@@ -2523,7 +2523,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
  800174e:	4889      	ldr	r0, [pc, #548]	; (8001974 <HAL_TIM_PeriodElapsedCallback+0x2ac>)
  8001750:	f001 fd2a 	bl	80031a8 <HAL_I2C_Mem_Read>
 
-		Accel_X_RAW = (int16_t)(Rec_Data[0] << 8 | Rec_Data [1]);
+		Accel_X_RAW = (Rec_Data[0] << 8 | Rec_Data [1]);
  8001754:	4b86      	ldr	r3, [pc, #536]	; (8001970 <HAL_TIM_PeriodElapsedCallback+0x2a8>)
  8001756:	781b      	ldrb	r3, [r3, #0]
  8001758:	021b      	lsls	r3, r3, #8
@@ -2535,7 +2535,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
  8001764:	b21a      	sxth	r2, r3
  8001766:	4b84      	ldr	r3, [pc, #528]	; (8001978 <HAL_TIM_PeriodElapsedCallback+0x2b0>)
  8001768:	801a      	strh	r2, [r3, #0]
-		Accel_Y_RAW = (int16_t)(Rec_Data[2] << 8 | Rec_Data [3]);
+		Accel_Y_RAW = (Rec_Data[2] << 8 | Rec_Data [3]);
  800176a:	4b81      	ldr	r3, [pc, #516]	; (8001970 <HAL_TIM_PeriodElapsedCallback+0x2a8>)
  800176c:	789b      	ldrb	r3, [r3, #2]
  800176e:	021b      	lsls	r3, r3, #8
@@ -2547,7 +2547,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
  800177a:	b21a      	sxth	r2, r3
  800177c:	4b7f      	ldr	r3, [pc, #508]	; (800197c <HAL_TIM_PeriodElapsedCallback+0x2b4>)
  800177e:	801a      	strh	r2, [r3, #0]
-		Accel_Z_RAW = (int16_t)(Rec_Data[4] << 8 | Rec_Data [5]);
+		Accel_Z_RAW = (Rec_Data[4] << 8 | Rec_Data [5]);
  8001780:	4b7b      	ldr	r3, [pc, #492]	; (8001970 <HAL_TIM_PeriodElapsedCallback+0x2a8>)
  8001782:	791b      	ldrb	r3, [r3, #4]
  8001784:	021b      	lsls	r3, r3, #8

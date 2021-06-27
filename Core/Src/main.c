@@ -168,6 +168,8 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
 
+  ssd1306_Init();
+
   ssd1306_Fill(Black);
   ssd1306_SetCursor(1, 11);
   ssd1306_WriteString("Proyecto final", Font_7x10, White);
@@ -180,8 +182,6 @@ int main(void)
   HAL_Delay(3000);
 
   HAL_I2C_Mem_Write(&hi2c1, (mpu6050_adr<<1) | 0, reg_pwrmngt1, 1, 0x00, 1, 100);
-
-  ssd1306_Init();
 
   HAL_TIM_Base_Start_IT(&htim3);
 
@@ -208,10 +208,10 @@ int main(void)
 			break;
 	}
 
-	if( (az_filter.out < 0.2) && (display_mode != 1)  )	// Revisar como evaluar que el timer ya está corriendo, cosa de no iniciarlo más de una vez.
+	if( (az_filter.out < 0.3) && (display_mode != 1)  )	// Revisar como evaluar que el timer ya está corriendo, cosa de no iniciarlo más de una vez.
 		HAL_TIM_Base_Start_IT(&htim2);
 
-	if( (az_filter.out > 0.8) && (display_mode != 2) )
+	if( (az_filter.out > 0.7) && (display_mode != 2) )
 		HAL_TIM_Base_Start_IT(&htim2);
 
   }
@@ -397,9 +397,9 @@ static void MX_TIM2_Init(void)
 
   /* USER CODE END TIM2_Init 1 */
   htim2.Instance = TIM2;
-  htim2.Init.Prescaler = 10000;
+  htim2.Init.Prescaler = 7200;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 7200;
+  htim2.Init.Period = 10000;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
   if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
@@ -558,9 +558,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
 	{
 		HAL_I2C_Mem_Read(&hi2c1, (mpu6050_adr<<1) | 0, accel_xout_h_reg, 1, Rec_Data, 6, 1000);
 
-		Accel_X_RAW = (int16_t)(Rec_Data[0] << 8 | Rec_Data [1]);
-		Accel_Y_RAW = (int16_t)(Rec_Data[2] << 8 | Rec_Data [3]);
-		Accel_Z_RAW = (int16_t)(Rec_Data[4] << 8 | Rec_Data [5]);
+		Accel_X_RAW = (Rec_Data[0] << 8 | Rec_Data [1]);
+		Accel_Y_RAW = (Rec_Data[2] << 8 | Rec_Data [3]);
+		Accel_Z_RAW = (Rec_Data[4] << 8 | Rec_Data [5]);
 
 		ax = (float)Accel_X_RAW / 16384.0;
 		ay = (float)Accel_Y_RAW / 16384.0;
