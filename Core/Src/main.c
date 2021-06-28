@@ -142,7 +142,7 @@ int main(void)
 
   ssd1306_Init();
   ssd1306_WelcomeScreen();
-  HAL_Delay(1000);
+  HAL_Delay(3000);
 
   mpu6050_Init(&mpu6050);
 

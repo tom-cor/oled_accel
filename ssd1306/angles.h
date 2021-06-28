@@ -8,6 +8,7 @@
 #ifndef ANGLES_H_
 #define ANGLES_H_
 
+#include <math.h>
 #include "mpu6050.h"
 #include "FIRFilter.h"
 
@@ -18,6 +19,9 @@ typedef struct
 	float yx;
 	float xz;
 	float yz;
+	float accel_x;
+	float accel_y;
+	float accel_z;
 } ANGLES;
 
 FIRFilter ax_filter;
