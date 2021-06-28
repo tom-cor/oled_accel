@@ -21,7 +21,9 @@ void mpu6050_Init (MPU6050 *mpu6050)
 	mpu6050->gyro_y = 0;
 	mpu6050->gyro_z = 0;
 
-	HAL_I2C_Mem_Write(&hi2c1, (MPU6050_ADDRESS<<1) | 0, PWRMNGT1_REG, 1, 0x00, 1, 100);
+	HAL_I2C_Mem_Write(&hi2c1, MPU6050_ADDRESS | 0, PWRMNGT1_REG, 1, 0x00, 1, 100);
+
+	return;
 }
 
 void mpu6050_Get_Accel(MPU6050 *mpu6050)
@@ -36,4 +38,6 @@ void mpu6050_Get_Accel(MPU6050 *mpu6050)
 	mpu6050->accel_x = (float)raw.accel_x / 16384.0;
 	mpu6050->accel_y = (float)raw.accel_y / 16384.0;
 	mpu6050->accel_z = (float)raw.accel_z / 16384.0;
+
+	return;
 }

@@ -27,6 +27,7 @@
 #include "../../ssd1306/ssd1306.h"
 #include "../../ssd1306/FIRFilter.h"
 #include "../../ssd1306/mpu6050.h"
+#include "../../ssd1306/angles.h"
 #include "math.h"
 #include "stdio.h"
 
@@ -37,7 +38,7 @@
 /* USER CODE BEGIN PTD */
 
 
-#define PI 3.14159265358
+
 
 
 /* USER CODE END PTD */
@@ -69,22 +70,7 @@ char display_mode = 0;
 
 static MPU6050 mpu6050;
 
-static FIRFilter az_filter;	//	Acc_Z filtered
-
-static FIRFilter angle_yx_filter;
-static FIRFilter angle_xz_filter;
-static FIRFilter angle_yz_filter;
-
-typedef struct
-{
-	float yx;
-	float xz;
-	float yz;
-} ANGLES;
-
-ANGLES angle;
-
-
+static ANGLES angles;
 
 
 /* USER CODE END PV */
@@ -154,19 +140,11 @@ int main(void)
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
 
-  mpu6050_Init(&mpu6050);
   ssd1306_Init();
-
-  ssd1306_Fill(Black);
-  ssd1306_SetCursor(1, 11);
-  ssd1306_WriteString("Proyecto final", Font_7x10, White);
-  ssd1306_SetCursor(1, 27);
-  ssd1306_WriteString("Sistemas Embebidos", Font_7x10, White);
-  ssd1306_SetCursor(1, 43);
-  ssd1306_WriteString("Tomas Cornaglia", Font_7x10, White);
-  ssd1306_UpdateScreen();
-
+  ssd1306_WelcomeScreen();
   HAL_Delay(1000);
+
+  mpu6050_Init(&mpu6050);
 
   HAL_TIM_Base_Start_IT(&htim3);
 
@@ -185,11 +163,11 @@ int main(void)
 	switch(display_mode)
 	{
 		case 1:
-			bubbleLevel_1d(angle.yx);
+			bubbleLevel_1d(angles.yx);
 			break;
 
 		case 2:
-			bubbleLevel_2d(angle.yz, angle.xz);
+			bubbleLevel_2d(angles.yz, angles.xz);
 			break;
 	}
 
@@ -543,15 +521,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
 	{
 		mpu6050_Get_Accel(&mpu6050);
 
-		FIRFilter_Update(&az_filter, mpu6050.accel_z);
-
-		angle.yx = -1*(atan2(mpu6050.accel_y,mpu6050.accel_x)*180)/PI;
-		angle.xz = (atan2(mpu6050.accel_x,mpu6050.accel_z)*180)/PI;
-		angle.yz = -1*(atan2(mpu6050.accel_y,mpu6050.accel_z)*180)/PI;
-
-		angle.yx = FIRFilter_Update(&angle_yx_filter, angle.yx);
-		angle.xz = FIRFilter_Update(&angle_xz_filter, angle.xz);
-		angle.yz = FIRFilter_Update(&angle_yz_filter, angle.yz);
+		angles_update(&mpu6050, &angles);
 	}
 
 }

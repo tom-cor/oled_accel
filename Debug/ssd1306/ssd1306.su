@@ -16,6 +16,7 @@ ssd1306.c:339:17:ssd1306_NormalizeTo0_360	24	static
 ssd1306.c:356:6:ssd1306_DrawArc	56	static
 ssd1306.c:393:6:ssd1306_DrawCircle	40	static
 ssd1306.c:438:6:ssd1306_DrawRectangle	32	static
-ssd1306.c:447:6:ssd1306_SetContrast	24	static
-ssd1306.c:453:6:ssd1306_SetDisplayOn	24	static
-ssd1306.c:465:9:ssd1306_GetDisplayOn	4	static
+ssd1306.c:448:6:ssd1306_WelcomeScreen	8	static
+ssd1306.c:460:6:ssd1306_SetContrast	24	static
+ssd1306.c:466:6:ssd1306_SetDisplayOn	24	static
+ssd1306.c:478:9:ssd1306_GetDisplayOn	4	static
