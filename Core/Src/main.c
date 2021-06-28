@@ -24,10 +24,10 @@
 /* USER CODE BEGIN Includes */
 
 
-#include "../../ssd1306/ssd1306.h"
-#include "../../ssd1306/FIRFilter.h"
-#include "../../ssd1306/mpu6050.h"
-#include "../../ssd1306/angles.h"
+#include "../../Libraries/ssd1306.h"
+#include "../../Libraries/FIRFilter.h"
+#include "../../Libraries/mpu6050.h"
+#include "../../Libraries/angles.h"
 #include "math.h"
 #include "stdio.h"
 

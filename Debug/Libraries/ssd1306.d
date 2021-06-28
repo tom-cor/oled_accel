@@ -1,5 +1,5 @@
-ssd1306/ssd1306.o: ../ssd1306/ssd1306.c ../ssd1306/ssd1306.h \
- ../ssd1306/ssd1306_conf.h \
+Libraries/ssd1306.o: ../Libraries/ssd1306.c ../Libraries/ssd1306.h \
+ ../Libraries/ssd1306_conf.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  ../Core/Inc/stm32f1xx_hal_conf.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
@@ -28,11 +28,11 @@ ssd1306/ssd1306.o: ../ssd1306/ssd1306.c ../ssd1306/ssd1306.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
- ../ssd1306/ssd1306_fonts.h
+ ../Libraries/ssd1306_fonts.h
 
-../ssd1306/ssd1306.h:
+../Libraries/ssd1306.h:
 
-../ssd1306/ssd1306_conf.h:
+../Libraries/ssd1306_conf.h:
 
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 
@@ -90,4 +90,4 @@ ssd1306/ssd1306.o: ../ssd1306/ssd1306.c ../ssd1306/ssd1306.h \
 
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
 
-../ssd1306/ssd1306_fonts.h:
+../Libraries/ssd1306_fonts.h:

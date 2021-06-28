@@ -1,5 +1,5 @@
-ssd1306/angles.o: ../ssd1306/angles.c ../ssd1306/angles.h \
- ../ssd1306/mpu6050.h ../ssd1306/mpu6050_conf.h \
+Libraries/angles.o: ../Libraries/angles.c ../Libraries/angles.h \
+ ../Libraries/mpu6050.h ../Libraries/mpu6050_conf.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  ../Core/Inc/stm32f1xx_hal_conf.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
@@ -28,13 +28,13 @@ ssd1306/angles.o: ../ssd1306/angles.c ../ssd1306/angles.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
- ../ssd1306/FIRFilter.h
+ ../Libraries/FIRFilter.h
 
-../ssd1306/angles.h:
+../Libraries/angles.h:
 
-../ssd1306/mpu6050.h:
+../Libraries/mpu6050.h:
 
-../ssd1306/mpu6050_conf.h:
+../Libraries/mpu6050_conf.h:
 
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 
@@ -92,4 +92,4 @@ ssd1306/angles.o: ../ssd1306/angles.c ../ssd1306/angles.h \
 
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
 
-../ssd1306/FIRFilter.h:
+../Libraries/FIRFilter.h:

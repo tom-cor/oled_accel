@@ -27,14 +27,15 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
- ../Core/Src/../../ssd1306/ssd1306.h \
- ../Core/Src/../../ssd1306/ssd1306_conf.h \
- ../Core/Src/../../ssd1306/ssd1306_fonts.h \
- ../Core/Src/../../ssd1306/FIRFilter.h \
- ../Core/Src/../../ssd1306/mpu6050.h \
- ../Core/Src/../../ssd1306/mpu6050_conf.h \
- ../Core/Src/../../ssd1306/angles.h ../Core/Src/../../ssd1306/mpu6050.h \
- ../Core/Src/../../ssd1306/FIRFilter.h
+ ../Core/Src/../../Libraries/ssd1306.h \
+ ../Core/Src/../../Libraries/ssd1306_conf.h \
+ ../Core/Src/../../Libraries/ssd1306_fonts.h \
+ ../Core/Src/../../Libraries/FIRFilter.h \
+ ../Core/Src/../../Libraries/mpu6050.h \
+ ../Core/Src/../../Libraries/mpu6050_conf.h \
+ ../Core/Src/../../Libraries/angles.h \
+ ../Core/Src/../../Libraries/mpu6050.h \
+ ../Core/Src/../../Libraries/FIRFilter.h
 
 ../Core/Inc/main.h:
 
@@ -94,20 +95,20 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
 
-../Core/Src/../../ssd1306/ssd1306.h:
+../Core/Src/../../Libraries/ssd1306.h:
 
-../Core/Src/../../ssd1306/ssd1306_conf.h:
+../Core/Src/../../Libraries/ssd1306_conf.h:
 
-../Core/Src/../../ssd1306/ssd1306_fonts.h:
+../Core/Src/../../Libraries/ssd1306_fonts.h:
 
-../Core/Src/../../ssd1306/FIRFilter.h:
+../Core/Src/../../Libraries/FIRFilter.h:
 
-../Core/Src/../../ssd1306/mpu6050.h:
+../Core/Src/../../Libraries/mpu6050.h:
 
-../Core/Src/../../ssd1306/mpu6050_conf.h:
+../Core/Src/../../Libraries/mpu6050_conf.h:
 
-../Core/Src/../../ssd1306/angles.h:
+../Core/Src/../../Libraries/angles.h:
 
-../Core/Src/../../ssd1306/mpu6050.h:
+../Core/Src/../../Libraries/mpu6050.h:
 
-../Core/Src/../../ssd1306/FIRFilter.h:
+../Core/Src/../../Libraries/FIRFilter.h:

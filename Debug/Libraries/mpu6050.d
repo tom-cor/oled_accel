@@ -1,5 +1,5 @@
-ssd1306/mpu6050.o: ../ssd1306/mpu6050.c ../ssd1306/mpu6050.h \
- ../ssd1306/mpu6050_conf.h \
+Libraries/mpu6050.o: ../Libraries/mpu6050.c ../Libraries/mpu6050.h \
+ ../Libraries/mpu6050_conf.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  ../Core/Inc/stm32f1xx_hal_conf.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
@@ -29,9 +29,9 @@ ssd1306/mpu6050.o: ../ssd1306/mpu6050.c ../ssd1306/mpu6050.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 
-../ssd1306/mpu6050.h:
+../Libraries/mpu6050.h:
 
-../ssd1306/mpu6050_conf.h:
+../Libraries/mpu6050_conf.h:
 
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 

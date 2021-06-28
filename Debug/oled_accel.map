@@ -9,7 +9,7 @@ Archive member included to satisfy reference by file (symbol)
 /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-init.o)
                               /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o (__libc_init_array)
 /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-memcpy-stub.o)
-                              ssd1306/ssd1306.o (memcpy)
+                              Libraries/ssd1306.o (memcpy)
 /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-memset.o)
                               /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o (memset)
 /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-nano-vfprintf_float.o)
@@ -153,7 +153,7 @@ Archive member included to satisfy reference by file (symbol)
 /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp/libgcc.a(_arm_addsubsf3.o)
                               Core/Src/main.o (__aeabi_fadd)
 /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp/libgcc.a(_arm_muldivsf3.o)
-                              ssd1306/mpu6050.o (__aeabi_fdiv)
+                              Libraries/mpu6050.o (__aeabi_fdiv)
 /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp/libgcc.a(_arm_cmpsf2.o)
                               Core/Src/main.o (__aeabi_fcmpgt)
 
@@ -182,7 +182,7 @@ __lock___malloc_recursive_mutex
 hadc1               0x30              Core/Src/main.o
 huart1              0x40              Core/Src/main.o
 az_filter           0x88              Core/Src/main.o
-raw                 0xe               ssd1306/mpu6050.o
+raw                 0xe               Libraries/mpu6050.o
 ax_filter           0x88              Core/Src/main.o
 htim2               0x48              Core/Src/main.o
 __lock___at_quick_exit_mutex
@@ -3002,378 +3002,378 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x8d1 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o
  .debug_macro   0x0000000000000000      0x26b Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o
  .debug_macro   0x0000000000000000       0x83 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o
- .group         0x0000000000000000        0xc ssd1306/FIRFilter.o
- .group         0x0000000000000000        0xc ssd1306/FIRFilter.o
- .group         0x0000000000000000        0xc ssd1306/FIRFilter.o
- .group         0x0000000000000000        0xc ssd1306/FIRFilter.o
- .group         0x0000000000000000        0xc ssd1306/FIRFilter.o
- .group         0x0000000000000000        0xc ssd1306/FIRFilter.o
- .group         0x0000000000000000        0xc ssd1306/FIRFilter.o
- .text          0x0000000000000000        0x0 ssd1306/FIRFilter.o
- .data          0x0000000000000000        0x0 ssd1306/FIRFilter.o
- .bss           0x0000000000000000        0x0 ssd1306/FIRFilter.o
- .debug_macro   0x0000000000000000      0xa9c ssd1306/FIRFilter.o
- .debug_macro   0x0000000000000000       0x22 ssd1306/FIRFilter.o
- .debug_macro   0x0000000000000000       0x8e ssd1306/FIRFilter.o
- .debug_macro   0x0000000000000000       0x51 ssd1306/FIRFilter.o
- .debug_macro   0x0000000000000000      0x103 ssd1306/FIRFilter.o
- .debug_macro   0x0000000000000000       0x6a ssd1306/FIRFilter.o
- .debug_macro   0x0000000000000000      0x1df ssd1306/FIRFilter.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/angles.o
- .text          0x0000000000000000        0x0 ssd1306/angles.o
- .data          0x0000000000000000        0x0 ssd1306/angles.o
- .bss           0x0000000000000000        0x0 ssd1306/angles.o
- .debug_macro   0x0000000000000000      0xa9c ssd1306/angles.o
- .debug_macro   0x0000000000000000       0x22 ssd1306/angles.o
- .debug_macro   0x0000000000000000       0x4c ssd1306/angles.o
- .debug_macro   0x0000000000000000       0x18 ssd1306/angles.o
- .debug_macro   0x0000000000000000       0x94 ssd1306/angles.o
- .debug_macro   0x0000000000000000       0x3c ssd1306/angles.o
- .debug_macro   0x0000000000000000       0x34 ssd1306/angles.o
- .debug_macro   0x0000000000000000      0x174 ssd1306/angles.o
- .debug_macro   0x0000000000000000       0x16 ssd1306/angles.o
- .debug_macro   0x0000000000000000       0x43 ssd1306/angles.o
- .debug_macro   0x0000000000000000       0x57 ssd1306/angles.o
- .debug_macro   0x0000000000000000       0x34 ssd1306/angles.o
- .debug_macro   0x0000000000000000       0x10 ssd1306/angles.o
- .debug_macro   0x0000000000000000       0x58 ssd1306/angles.o
- .debug_macro   0x0000000000000000       0x71 ssd1306/angles.o
- .debug_macro   0x0000000000000000       0x1c ssd1306/angles.o
- .debug_macro   0x0000000000000000      0x12a ssd1306/angles.o
- .debug_macro   0x0000000000000000      0x339 ssd1306/angles.o
- .debug_macro   0x0000000000000000      0x1a9 ssd1306/angles.o
- .debug_macro   0x0000000000000000      0x227 ssd1306/angles.o
- .debug_macro   0x0000000000000000       0x2e ssd1306/angles.o
- .debug_macro   0x0000000000000000       0x22 ssd1306/angles.o
- .debug_macro   0x0000000000000000      0x103 ssd1306/angles.o
- .debug_macro   0x0000000000000000       0x6a ssd1306/angles.o
- .debug_macro   0x0000000000000000      0x1df ssd1306/angles.o
- .debug_macro   0x0000000000000000       0x1c ssd1306/angles.o
- .debug_macro   0x0000000000000000       0x22 ssd1306/angles.o
- .debug_macro   0x0000000000000000      0xd23 ssd1306/angles.o
- .debug_macro   0x0000000000000000     0xe097 ssd1306/angles.o
- .debug_macro   0x0000000000000000       0x43 ssd1306/angles.o
- .debug_macro   0x0000000000000000     0x3468 ssd1306/angles.o
- .debug_macro   0x0000000000000000      0x5be ssd1306/angles.o
- .debug_macro   0x0000000000000000      0x289 ssd1306/angles.o
- .debug_macro   0x0000000000000000      0x1cb ssd1306/angles.o
- .debug_macro   0x0000000000000000      0x114 ssd1306/angles.o
- .debug_macro   0x0000000000000000      0x1b2 ssd1306/angles.o
- .debug_macro   0x0000000000000000       0x27 ssd1306/angles.o
- .debug_macro   0x0000000000000000      0x136 ssd1306/angles.o
- .debug_macro   0x0000000000000000      0x1bc ssd1306/angles.o
- .debug_macro   0x0000000000000000       0x34 ssd1306/angles.o
- .debug_macro   0x0000000000000000       0x3c ssd1306/angles.o
- .debug_macro   0x0000000000000000       0x57 ssd1306/angles.o
- .debug_macro   0x0000000000000000      0x46a ssd1306/angles.o
- .debug_macro   0x0000000000000000      0x1b5 ssd1306/angles.o
- .debug_macro   0x0000000000000000       0x88 ssd1306/angles.o
- .debug_macro   0x0000000000000000      0x241 ssd1306/angles.o
- .debug_macro   0x0000000000000000      0x287 ssd1306/angles.o
- .debug_macro   0x0000000000000000      0x141 ssd1306/angles.o
- .debug_macro   0x0000000000000000      0x8d1 ssd1306/angles.o
- .debug_macro   0x0000000000000000      0x26b ssd1306/angles.o
- .debug_macro   0x0000000000000000       0x83 ssd1306/angles.o
- .debug_macro   0x0000000000000000       0x1c ssd1306/angles.o
- .debug_macro   0x0000000000000000       0x10 ssd1306/angles.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/mpu6050.o
- .text          0x0000000000000000        0x0 ssd1306/mpu6050.o
- .data          0x0000000000000000        0x0 ssd1306/mpu6050.o
- .bss           0x0000000000000000        0x0 ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000      0xa9c ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000      0x174 ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000       0x22 ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000       0x4c ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000       0x18 ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000       0x94 ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000       0x3c ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000       0x34 ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000      0x227 ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000       0x2e ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000       0x22 ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000       0x57 ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000      0x103 ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000       0x6a ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000      0x1df ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000       0x1c ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000       0x22 ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000       0xc3 ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000      0xd23 ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000     0xe097 ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000       0x43 ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000     0x3468 ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000       0x5c ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000      0x5be ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000      0x289 ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000      0x1cb ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000      0x114 ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000      0x1b2 ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000       0x27 ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000      0x136 ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000      0x1bc ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000       0x34 ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000       0x3c ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000       0x57 ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000      0x46a ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000      0x1b5 ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000       0x88 ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000      0x241 ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000      0x287 ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000      0x141 ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000      0x8d1 ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000      0x26b ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000       0x83 ssd1306/mpu6050.o
- .debug_macro   0x0000000000000000       0x1c ssd1306/mpu6050.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306.o
- .text          0x0000000000000000        0x0 ssd1306/ssd1306.o
- .data          0x0000000000000000        0x0 ssd1306/ssd1306.o
- .bss           0x0000000000000000        0x0 ssd1306/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/FIRFilter.o
+ .group         0x0000000000000000        0xc Libraries/FIRFilter.o
+ .group         0x0000000000000000        0xc Libraries/FIRFilter.o
+ .group         0x0000000000000000        0xc Libraries/FIRFilter.o
+ .group         0x0000000000000000        0xc Libraries/FIRFilter.o
+ .group         0x0000000000000000        0xc Libraries/FIRFilter.o
+ .group         0x0000000000000000        0xc Libraries/FIRFilter.o
+ .text          0x0000000000000000        0x0 Libraries/FIRFilter.o
+ .data          0x0000000000000000        0x0 Libraries/FIRFilter.o
+ .bss           0x0000000000000000        0x0 Libraries/FIRFilter.o
+ .debug_macro   0x0000000000000000      0xa9c Libraries/FIRFilter.o
+ .debug_macro   0x0000000000000000       0x22 Libraries/FIRFilter.o
+ .debug_macro   0x0000000000000000       0x8e Libraries/FIRFilter.o
+ .debug_macro   0x0000000000000000       0x51 Libraries/FIRFilter.o
+ .debug_macro   0x0000000000000000      0x103 Libraries/FIRFilter.o
+ .debug_macro   0x0000000000000000       0x6a Libraries/FIRFilter.o
+ .debug_macro   0x0000000000000000      0x1df Libraries/FIRFilter.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/angles.o
+ .text          0x0000000000000000        0x0 Libraries/angles.o
+ .data          0x0000000000000000        0x0 Libraries/angles.o
+ .bss           0x0000000000000000        0x0 Libraries/angles.o
+ .debug_macro   0x0000000000000000      0xa9c Libraries/angles.o
+ .debug_macro   0x0000000000000000       0x22 Libraries/angles.o
+ .debug_macro   0x0000000000000000       0x4c Libraries/angles.o
+ .debug_macro   0x0000000000000000       0x18 Libraries/angles.o
+ .debug_macro   0x0000000000000000       0x94 Libraries/angles.o
+ .debug_macro   0x0000000000000000       0x3c Libraries/angles.o
+ .debug_macro   0x0000000000000000       0x34 Libraries/angles.o
+ .debug_macro   0x0000000000000000      0x174 Libraries/angles.o
+ .debug_macro   0x0000000000000000       0x16 Libraries/angles.o
+ .debug_macro   0x0000000000000000       0x43 Libraries/angles.o
+ .debug_macro   0x0000000000000000       0x57 Libraries/angles.o
+ .debug_macro   0x0000000000000000       0x34 Libraries/angles.o
+ .debug_macro   0x0000000000000000       0x10 Libraries/angles.o
+ .debug_macro   0x0000000000000000       0x58 Libraries/angles.o
+ .debug_macro   0x0000000000000000       0x71 Libraries/angles.o
+ .debug_macro   0x0000000000000000       0x1c Libraries/angles.o
+ .debug_macro   0x0000000000000000      0x12a Libraries/angles.o
+ .debug_macro   0x0000000000000000      0x339 Libraries/angles.o
+ .debug_macro   0x0000000000000000      0x1a9 Libraries/angles.o
+ .debug_macro   0x0000000000000000      0x227 Libraries/angles.o
+ .debug_macro   0x0000000000000000       0x2e Libraries/angles.o
+ .debug_macro   0x0000000000000000       0x22 Libraries/angles.o
+ .debug_macro   0x0000000000000000      0x103 Libraries/angles.o
+ .debug_macro   0x0000000000000000       0x6a Libraries/angles.o
+ .debug_macro   0x0000000000000000      0x1df Libraries/angles.o
+ .debug_macro   0x0000000000000000       0x1c Libraries/angles.o
+ .debug_macro   0x0000000000000000       0x22 Libraries/angles.o
+ .debug_macro   0x0000000000000000      0xd23 Libraries/angles.o
+ .debug_macro   0x0000000000000000     0xe097 Libraries/angles.o
+ .debug_macro   0x0000000000000000       0x43 Libraries/angles.o
+ .debug_macro   0x0000000000000000     0x3468 Libraries/angles.o
+ .debug_macro   0x0000000000000000      0x5be Libraries/angles.o
+ .debug_macro   0x0000000000000000      0x289 Libraries/angles.o
+ .debug_macro   0x0000000000000000      0x1cb Libraries/angles.o
+ .debug_macro   0x0000000000000000      0x114 Libraries/angles.o
+ .debug_macro   0x0000000000000000      0x1b2 Libraries/angles.o
+ .debug_macro   0x0000000000000000       0x27 Libraries/angles.o
+ .debug_macro   0x0000000000000000      0x136 Libraries/angles.o
+ .debug_macro   0x0000000000000000      0x1bc Libraries/angles.o
+ .debug_macro   0x0000000000000000       0x34 Libraries/angles.o
+ .debug_macro   0x0000000000000000       0x3c Libraries/angles.o
+ .debug_macro   0x0000000000000000       0x57 Libraries/angles.o
+ .debug_macro   0x0000000000000000      0x46a Libraries/angles.o
+ .debug_macro   0x0000000000000000      0x1b5 Libraries/angles.o
+ .debug_macro   0x0000000000000000       0x88 Libraries/angles.o
+ .debug_macro   0x0000000000000000      0x241 Libraries/angles.o
+ .debug_macro   0x0000000000000000      0x287 Libraries/angles.o
+ .debug_macro   0x0000000000000000      0x141 Libraries/angles.o
+ .debug_macro   0x0000000000000000      0x8d1 Libraries/angles.o
+ .debug_macro   0x0000000000000000      0x26b Libraries/angles.o
+ .debug_macro   0x0000000000000000       0x83 Libraries/angles.o
+ .debug_macro   0x0000000000000000       0x1c Libraries/angles.o
+ .debug_macro   0x0000000000000000       0x10 Libraries/angles.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/mpu6050.o
+ .text          0x0000000000000000        0x0 Libraries/mpu6050.o
+ .data          0x0000000000000000        0x0 Libraries/mpu6050.o
+ .bss           0x0000000000000000        0x0 Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000      0xa9c Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000      0x174 Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000       0x22 Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000       0x4c Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000       0x18 Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000       0x94 Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000       0x3c Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000       0x34 Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000      0x227 Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000       0x2e Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000       0x22 Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000       0x57 Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000      0x103 Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000       0x6a Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000      0x1df Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000       0x1c Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000       0x22 Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000       0xc3 Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000      0xd23 Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000     0xe097 Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000       0x43 Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000     0x3468 Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000       0x5c Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000      0x5be Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000      0x289 Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000      0x1cb Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000      0x114 Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000      0x1b2 Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000       0x27 Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000      0x136 Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000      0x1bc Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000       0x34 Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000       0x3c Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000       0x57 Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000      0x46a Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000      0x1b5 Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000       0x88 Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000      0x241 Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000      0x287 Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000      0x141 Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000      0x8d1 Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000      0x26b Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000       0x83 Libraries/mpu6050.o
+ .debug_macro   0x0000000000000000       0x1c Libraries/mpu6050.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306.o
+ .text          0x0000000000000000        0x0 Libraries/ssd1306.o
+ .data          0x0000000000000000        0x0 Libraries/ssd1306.o
+ .bss           0x0000000000000000        0x0 Libraries/ssd1306.o
  .text.ssd1306_FillBuffer
-                0x0000000000000000       0x34 ssd1306/ssd1306.o
+                0x0000000000000000       0x34 Libraries/ssd1306.o
  .text.ssd1306_Polyline
-                0x0000000000000000       0x74 ssd1306/ssd1306.o
+                0x0000000000000000       0x74 Libraries/ssd1306.o
  .text.ssd1306_DegToRad
-                0x0000000000000000       0x4c ssd1306/ssd1306.o
+                0x0000000000000000       0x4c Libraries/ssd1306.o
  .text.ssd1306_NormalizeTo0_360
-                0x0000000000000000       0x50 ssd1306/ssd1306.o
+                0x0000000000000000       0x50 Libraries/ssd1306.o
  .text.ssd1306_DrawArc
-                0x0000000000000000      0x208 ssd1306/ssd1306.o
+                0x0000000000000000      0x208 Libraries/ssd1306.o
  .text.ssd1306_GetDisplayOn
-                0x0000000000000000       0x14 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000      0xa9c ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000      0x174 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000       0x22 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000       0x4c ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000       0x18 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000       0x94 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000       0x3c ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000       0x34 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000       0x34 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000      0x227 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000       0x22 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000       0x57 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000      0x103 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000       0x6a ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000      0x1df ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000       0x1c ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000       0x22 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000       0xc3 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000      0xd23 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000     0xe097 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000       0x43 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000     0x3468 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000       0x5c ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000      0x5be ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000      0x289 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000      0x1cb ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000      0x114 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000      0x1b2 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000       0x27 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000      0x136 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000      0x1bc ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000       0x34 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000       0x3c ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000       0x57 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000      0x46a ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000      0x1b5 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000       0x88 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000      0x241 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000      0x287 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000      0x141 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000      0x8d1 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000      0x26b ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000       0x83 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000       0x3a ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000       0x16 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000       0x43 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000       0x34 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000       0x10 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000       0x58 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000       0x71 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000       0x1c ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000      0x12a ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000      0x333 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000      0x1a9 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000       0x16 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000       0x35 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000       0x16 ssd1306/ssd1306.o
- .debug_macro   0x0000000000000000       0x29 ssd1306/ssd1306.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306_fonts.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306_fonts.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306_fonts.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306_fonts.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306_fonts.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306_fonts.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306_fonts.o
- .group         0x0000000000000000        0xc ssd1306/ssd1306_fonts.o
- .text          0x0000000000000000        0x0 ssd1306/ssd1306_fonts.o
- .data          0x0000000000000000        0x0 ssd1306/ssd1306_fonts.o
- .bss           0x0000000000000000        0x0 ssd1306/ssd1306_fonts.o
- .debug_macro   0x0000000000000000      0xa9c ssd1306/ssd1306_fonts.o
- .debug_macro   0x0000000000000000       0x22 ssd1306/ssd1306_fonts.o
- .debug_macro   0x0000000000000000       0x8e ssd1306/ssd1306_fonts.o
- .debug_macro   0x0000000000000000       0x51 ssd1306/ssd1306_fonts.o
- .debug_macro   0x0000000000000000      0x103 ssd1306/ssd1306_fonts.o
- .debug_macro   0x0000000000000000       0x6a ssd1306/ssd1306_fonts.o
- .debug_macro   0x0000000000000000      0x1df ssd1306/ssd1306_fonts.o
- .debug_macro   0x0000000000000000       0x34 ssd1306/ssd1306_fonts.o
+                0x0000000000000000       0x14 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000      0xa9c Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000      0x174 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000       0x22 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000       0x4c Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000       0x18 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000       0x94 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000       0x3c Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000       0x34 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000       0x34 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000      0x227 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000       0x22 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000       0x57 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000      0x103 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000       0x6a Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000      0x1df Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000       0x1c Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000       0x22 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000       0xc3 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000      0xd23 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000     0xe097 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000       0x43 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000     0x3468 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000       0x5c Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000      0x5be Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000      0x289 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000      0x1cb Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000      0x114 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000      0x1b2 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000       0x27 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000      0x136 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000      0x1bc Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000       0x34 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000       0x3c Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000       0x57 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000      0x46a Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000      0x1b5 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000       0x88 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000      0x241 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000      0x287 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000      0x141 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000      0x8d1 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000      0x26b Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000       0x83 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000       0x3a Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000       0x16 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000       0x43 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000       0x34 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000       0x10 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000       0x58 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000       0x71 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000       0x1c Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000      0x12a Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000      0x333 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000      0x1a9 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000       0x16 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000       0x35 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000       0x16 Libraries/ssd1306.o
+ .debug_macro   0x0000000000000000       0x29 Libraries/ssd1306.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306_fonts.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306_fonts.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306_fonts.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306_fonts.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306_fonts.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306_fonts.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306_fonts.o
+ .group         0x0000000000000000        0xc Libraries/ssd1306_fonts.o
+ .text          0x0000000000000000        0x0 Libraries/ssd1306_fonts.o
+ .data          0x0000000000000000        0x0 Libraries/ssd1306_fonts.o
+ .bss           0x0000000000000000        0x0 Libraries/ssd1306_fonts.o
+ .debug_macro   0x0000000000000000      0xa9c Libraries/ssd1306_fonts.o
+ .debug_macro   0x0000000000000000       0x22 Libraries/ssd1306_fonts.o
+ .debug_macro   0x0000000000000000       0x8e Libraries/ssd1306_fonts.o
+ .debug_macro   0x0000000000000000       0x51 Libraries/ssd1306_fonts.o
+ .debug_macro   0x0000000000000000      0x103 Libraries/ssd1306_fonts.o
+ .debug_macro   0x0000000000000000       0x6a Libraries/ssd1306_fonts.o
+ .debug_macro   0x0000000000000000      0x1df Libraries/ssd1306_fonts.o
+ .debug_macro   0x0000000000000000       0x34 Libraries/ssd1306_fonts.o
  .text          0x0000000000000000        0x0 /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-errno.o)
  .data          0x0000000000000000        0x0 /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-errno.o)
  .bss           0x0000000000000000        0x0 /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-errno.o)
@@ -3746,11 +3746,11 @@ LOAD Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o
 LOAD Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o
 LOAD Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o
 LOAD Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o
-LOAD ssd1306/FIRFilter.o
-LOAD ssd1306/angles.o
-LOAD ssd1306/mpu6050.o
-LOAD ssd1306/ssd1306.o
-LOAD ssd1306/ssd1306_fonts.o
+LOAD Libraries/FIRFilter.o
+LOAD Libraries/angles.o
+LOAD Libraries/mpu6050.o
+LOAD Libraries/ssd1306.o
+LOAD Libraries/ssd1306_fonts.o
 START GROUP
 LOAD /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a
 LOAD /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libm.a
@@ -4183,70 +4183,70 @@ LOAD /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.g
  .text.UART_SetConfig
                 0x0000000008004de4      0x11c Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o
  .text.FIRFilter_Init
-                0x0000000008004f00       0x42 ssd1306/FIRFilter.o
+                0x0000000008004f00       0x42 Libraries/FIRFilter.o
                 0x0000000008004f00                FIRFilter_Init
  *fill*         0x0000000008004f42        0x2 
  .text.FIRFilter_Update
-                0x0000000008004f44       0xb4 ssd1306/FIRFilter.o
+                0x0000000008004f44       0xb4 Libraries/FIRFilter.o
                 0x0000000008004f44                FIRFilter_Update
  .text.angles_update
-                0x0000000008004ff8      0x180 ssd1306/angles.o
+                0x0000000008004ff8      0x180 Libraries/angles.o
                 0x0000000008004ff8                angles_update
  .text.mpu6050_Init
-                0x0000000008005178       0x64 ssd1306/mpu6050.o
+                0x0000000008005178       0x64 Libraries/mpu6050.o
                 0x0000000008005178                mpu6050_Init
  .text.mpu6050_Get_Accel
-                0x00000000080051dc       0xd8 ssd1306/mpu6050.o
+                0x00000000080051dc       0xd8 Libraries/mpu6050.o
                 0x00000000080051dc                mpu6050_Get_Accel
  .text.ssd1306_Reset
-                0x00000000080052b4        0xc ssd1306/ssd1306.o
+                0x00000000080052b4        0xc Libraries/ssd1306.o
                 0x00000000080052b4                ssd1306_Reset
  .text.ssd1306_WriteCommand
-                0x00000000080052c0       0x30 ssd1306/ssd1306.o
+                0x00000000080052c0       0x30 Libraries/ssd1306.o
                 0x00000000080052c0                ssd1306_WriteCommand
  .text.ssd1306_WriteData
-                0x00000000080052f0       0x34 ssd1306/ssd1306.o
+                0x00000000080052f0       0x34 Libraries/ssd1306.o
                 0x00000000080052f0                ssd1306_WriteData
  .text.ssd1306_Init
-                0x0000000008005324       0xd4 ssd1306/ssd1306.o
+                0x0000000008005324       0xd4 Libraries/ssd1306.o
                 0x0000000008005324                ssd1306_Init
  .text.ssd1306_Fill
-                0x00000000080053f8       0x44 ssd1306/ssd1306.o
+                0x00000000080053f8       0x44 Libraries/ssd1306.o
                 0x00000000080053f8                ssd1306_Fill
  .text.ssd1306_UpdateScreen
-                0x000000000800543c       0x58 ssd1306/ssd1306.o
+                0x000000000800543c       0x58 Libraries/ssd1306.o
                 0x000000000800543c                ssd1306_UpdateScreen
  .text.ssd1306_DrawPixel
-                0x0000000008005494       0xd4 ssd1306/ssd1306.o
+                0x0000000008005494       0xd4 Libraries/ssd1306.o
                 0x0000000008005494                ssd1306_DrawPixel
  .text.ssd1306_WriteChar
-                0x0000000008005568      0x110 ssd1306/ssd1306.o
+                0x0000000008005568      0x110 Libraries/ssd1306.o
                 0x0000000008005568                ssd1306_WriteChar
  .text.ssd1306_WriteString
-                0x0000000008005678       0x4c ssd1306/ssd1306.o
+                0x0000000008005678       0x4c Libraries/ssd1306.o
                 0x0000000008005678                ssd1306_WriteString
  .text.ssd1306_SetCursor
-                0x00000000080056c4       0x30 ssd1306/ssd1306.o
+                0x00000000080056c4       0x30 Libraries/ssd1306.o
                 0x00000000080056c4                ssd1306_SetCursor
  .text.ssd1306_Line
-                0x00000000080056f4       0xd8 ssd1306/ssd1306.o
+                0x00000000080056f4       0xd8 Libraries/ssd1306.o
                 0x00000000080056f4                ssd1306_Line
  .text.ssd1306_DrawCircle
-                0x00000000080057cc      0x10c ssd1306/ssd1306.o
+                0x00000000080057cc      0x10c Libraries/ssd1306.o
                 0x00000000080057cc                ssd1306_DrawCircle
  .text.ssd1306_DrawRectangle
-                0x00000000080058d8       0x6e ssd1306/ssd1306.o
+                0x00000000080058d8       0x6e Libraries/ssd1306.o
                 0x00000000080058d8                ssd1306_DrawRectangle
  *fill*         0x0000000008005946        0x2 
  .text.ssd1306_WelcomeScreen
-                0x0000000008005948       0x78 ssd1306/ssd1306.o
+                0x0000000008005948       0x78 Libraries/ssd1306.o
                 0x0000000008005948                ssd1306_WelcomeScreen
  .text.ssd1306_SetContrast
-                0x00000000080059c0       0x26 ssd1306/ssd1306.o
+                0x00000000080059c0       0x26 Libraries/ssd1306.o
                 0x00000000080059c0                ssd1306_SetContrast
  *fill*         0x00000000080059e6        0x2 
  .text.ssd1306_SetDisplayOn
-                0x00000000080059e8       0x3c ssd1306/ssd1306.o
+                0x00000000080059e8       0x3c Libraries/ssd1306.o
                 0x00000000080059e8                ssd1306_SetDisplayOn
  .text.__errno  0x0000000008005a24        0xc /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-errno.o)
                 0x0000000008005a24                __errno
@@ -4538,7 +4538,7 @@ LOAD /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.g
  .rodata        0x0000000008009ed0        0x7 Core/Src/main.o
  *fill*         0x0000000008009ed7        0x1 
  .rodata        0x0000000008009ed8       0x10 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
- .rodata        0x0000000008009ee8       0x48 ssd1306/ssd1306.o
+ .rodata        0x0000000008009ee8       0x48 Libraries/ssd1306.o
  *(.rodata*)
  .rodata.AHBPrescTable
                 0x0000000008009f30       0x10 Core/Src/system_stm32f1xx.o
@@ -4547,9 +4547,9 @@ LOAD /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.g
                 0x0000000008009f40        0x8 Core/Src/system_stm32f1xx.o
                 0x0000000008009f40                APBPrescTable
  .rodata.Font7x10
-                0x0000000008009f48      0x76c ssd1306/ssd1306_fonts.o
+                0x0000000008009f48      0x76c Libraries/ssd1306_fonts.o
  .rodata.Font16x26
-                0x000000000800a6b4     0x134c ssd1306/ssd1306_fonts.o
+                0x000000000800a6b4     0x134c Libraries/ssd1306_fonts.o
  .rodata._global_impure_ptr
                 0x000000000800ba00        0x4 /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-impure.o)
                 0x000000000800ba00                _global_impure_ptr
@@ -4676,12 +4676,12 @@ LOAD /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.g
                 0x000000002000000c                uwTickFreq
  *fill*         0x000000002000000d        0x3 
  .data.FIR_IMPULSE_RESPONSE
-                0x0000000020000010       0x80 ssd1306/FIRFilter.o
+                0x0000000020000010       0x80 Libraries/FIRFilter.o
  .data.Font_7x10
-                0x0000000020000090        0x8 ssd1306/ssd1306_fonts.o
+                0x0000000020000090        0x8 Libraries/ssd1306_fonts.o
                 0x0000000020000090                Font_7x10
  .data.Font_16x26
-                0x0000000020000098        0x8 ssd1306/ssd1306_fonts.o
+                0x0000000020000098        0x8 Libraries/ssd1306_fonts.o
                 0x0000000020000098                Font_16x26
  .data._impure_ptr
                 0x00000000200000a0        0x4 /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-impure.o)
@@ -4721,8 +4721,8 @@ LOAD /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.g
  .bss.__sbrk_heap_end
                 0x00000000200002cc        0x4 Core/Src/sysmem.o
  .bss.SSD1306_Buffer
-                0x00000000200002d0      0x410 ssd1306/ssd1306.o
- .bss.SSD1306   0x00000000200006e0        0x8 ssd1306/ssd1306.o
+                0x00000000200002d0      0x410 Libraries/ssd1306.o
+ .bss.SSD1306   0x00000000200006e0        0x8 Libraries/ssd1306.o
  .bss.__malloc_free_list
                 0x00000000200006e8        0x4 /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-nano-mallocr.o)
                 0x00000000200006e8                __malloc_free_list
@@ -4746,7 +4746,7 @@ LOAD /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.g
                 0x0000000020000b50                angle_xz_filter
  COMMON         0x0000000020000bd8        0x4 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
                 0x0000000020000bd8                uwTick
- COMMON         0x0000000020000bdc        0xe ssd1306/mpu6050.o
+ COMMON         0x0000000020000bdc        0xe Libraries/mpu6050.o
                 0x0000000020000bdc                raw
  *fill*         0x0000000020000bea        0x2 
  COMMON         0x0000000020000bec        0x4 /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-reent.o)
@@ -4825,15 +4825,15 @@ LOAD /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.g
  .ARM.attributes
                 0x000000000000030e       0x2d Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o
  .ARM.attributes
-                0x000000000000033b       0x2d ssd1306/FIRFilter.o
+                0x000000000000033b       0x2d Libraries/FIRFilter.o
  .ARM.attributes
-                0x0000000000000368       0x2d ssd1306/angles.o
+                0x0000000000000368       0x2d Libraries/angles.o
  .ARM.attributes
-                0x0000000000000395       0x2d ssd1306/mpu6050.o
+                0x0000000000000395       0x2d Libraries/mpu6050.o
  .ARM.attributes
-                0x00000000000003c2       0x2d ssd1306/ssd1306.o
+                0x00000000000003c2       0x2d Libraries/ssd1306.o
  .ARM.attributes
-                0x00000000000003ef       0x33 ssd1306/ssd1306_fonts.o
+                0x00000000000003ef       0x33 Libraries/ssd1306_fonts.o
  .ARM.attributes
                 0x0000000000000422       0x2d /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-errno.o)
  .ARM.attributes
@@ -5006,11 +5006,11 @@ LOAD /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.g
  .debug_info    0x000000000000b532     0x2a43 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o
  .debug_info    0x000000000000df75     0x1495 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o
  .debug_info    0x000000000000f40a     0x1322 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o
- .debug_info    0x000000000001072c      0x18c ssd1306/FIRFilter.o
- .debug_info    0x00000000000108b8     0x114e ssd1306/angles.o
- .debug_info    0x0000000000011a06      0x808 ssd1306/mpu6050.o
- .debug_info    0x000000000001220e     0x176d ssd1306/ssd1306.o
- .debug_info    0x000000000001397b      0x16b ssd1306/ssd1306_fonts.o
+ .debug_info    0x000000000001072c      0x18c Libraries/FIRFilter.o
+ .debug_info    0x00000000000108b8     0x114e Libraries/angles.o
+ .debug_info    0x0000000000011a06      0x808 Libraries/mpu6050.o
+ .debug_info    0x000000000001220e     0x176d Libraries/ssd1306.o
+ .debug_info    0x000000000001397b      0x16b Libraries/ssd1306_fonts.o
 
 .debug_abbrev   0x0000000000000000     0x2bfa
  .debug_abbrev  0x0000000000000000      0x335 Core/Src/main.o
@@ -5030,11 +5030,11 @@ LOAD /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.g
  .debug_abbrev  0x0000000000001bc7      0x25e Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o
  .debug_abbrev  0x0000000000001e25      0x266 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o
  .debug_abbrev  0x000000000000208b      0x270 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o
- .debug_abbrev  0x00000000000022fb       0xfc ssd1306/FIRFilter.o
- .debug_abbrev  0x00000000000023f7      0x20a ssd1306/angles.o
- .debug_abbrev  0x0000000000002601      0x19c ssd1306/mpu6050.o
- .debug_abbrev  0x000000000000279d      0x3b0 ssd1306/ssd1306.o
- .debug_abbrev  0x0000000000002b4d       0xad ssd1306/ssd1306_fonts.o
+ .debug_abbrev  0x00000000000022fb       0xfc Libraries/FIRFilter.o
+ .debug_abbrev  0x00000000000023f7      0x20a Libraries/angles.o
+ .debug_abbrev  0x0000000000002601      0x19c Libraries/mpu6050.o
+ .debug_abbrev  0x000000000000279d      0x3b0 Libraries/ssd1306.o
+ .debug_abbrev  0x0000000000002b4d       0xad Libraries/ssd1306_fonts.o
 
 .debug_aranges  0x0000000000000000     0x1148
  .debug_aranges
@@ -5072,15 +5072,15 @@ LOAD /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.g
  .debug_aranges
                 0x0000000000000e28      0x1d0 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o
  .debug_aranges
-                0x0000000000000ff8       0x28 ssd1306/FIRFilter.o
+                0x0000000000000ff8       0x28 Libraries/FIRFilter.o
  .debug_aranges
-                0x0000000000001020       0x20 ssd1306/angles.o
+                0x0000000000001020       0x20 Libraries/angles.o
  .debug_aranges
-                0x0000000000001040       0x28 ssd1306/mpu6050.o
+                0x0000000000001040       0x28 Libraries/mpu6050.o
  .debug_aranges
-                0x0000000000001068       0xc8 ssd1306/ssd1306.o
+                0x0000000000001068       0xc8 Libraries/ssd1306.o
  .debug_aranges
-                0x0000000000001130       0x18 ssd1306/ssd1306_fonts.o
+                0x0000000000001130       0x18 Libraries/ssd1306_fonts.o
 
 .debug_ranges   0x0000000000000000     0x1010
  .debug_ranges  0x0000000000000000       0x70 Core/Src/main.o
@@ -5100,10 +5100,10 @@ LOAD /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.g
  .debug_ranges  0x0000000000000840      0x3c0 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o
  .debug_ranges  0x0000000000000c00      0x158 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o
  .debug_ranges  0x0000000000000d58      0x1c0 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o
- .debug_ranges  0x0000000000000f18       0x18 ssd1306/FIRFilter.o
- .debug_ranges  0x0000000000000f30       0x10 ssd1306/angles.o
- .debug_ranges  0x0000000000000f40       0x18 ssd1306/mpu6050.o
- .debug_ranges  0x0000000000000f58       0xb8 ssd1306/ssd1306.o
+ .debug_ranges  0x0000000000000f18       0x18 Libraries/FIRFilter.o
+ .debug_ranges  0x0000000000000f30       0x10 Libraries/angles.o
+ .debug_ranges  0x0000000000000f40       0x18 Libraries/mpu6050.o
+ .debug_ranges  0x0000000000000f58       0xb8 Libraries/ssd1306.o
 
 .debug_macro    0x0000000000000000    0x1a2d4
  .debug_macro   0x0000000000000000      0x3b0 Core/Src/main.o
@@ -5212,42 +5212,42 @@ LOAD /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.g
  .debug_macro   0x000000000001939a      0x1c2 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o
  .debug_macro   0x000000000001955c      0x1c1 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o
  .debug_macro   0x000000000001971d      0x1c2 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o
- .debug_macro   0x00000000000198df       0x73 ssd1306/FIRFilter.o
- .debug_macro   0x0000000000019952      0x29c ssd1306/angles.o
- .debug_macro   0x0000000000019bee       0xbd ssd1306/angles.o
- .debug_macro   0x0000000000019cab       0x56 ssd1306/angles.o
- .debug_macro   0x0000000000019d01      0x208 ssd1306/mpu6050.o
- .debug_macro   0x0000000000019f09      0x2f7 ssd1306/ssd1306.o
- .debug_macro   0x000000000001a200       0x28 ssd1306/ssd1306.o
- .debug_macro   0x000000000001a228       0x16 ssd1306/ssd1306.o
- .debug_macro   0x000000000001a23e       0x20 ssd1306/ssd1306.o
- .debug_macro   0x000000000001a25e       0x76 ssd1306/ssd1306_fonts.o
+ .debug_macro   0x00000000000198df       0x73 Libraries/FIRFilter.o
+ .debug_macro   0x0000000000019952      0x29c Libraries/angles.o
+ .debug_macro   0x0000000000019bee       0xbd Libraries/angles.o
+ .debug_macro   0x0000000000019cab       0x56 Libraries/angles.o
+ .debug_macro   0x0000000000019d01      0x208 Libraries/mpu6050.o
+ .debug_macro   0x0000000000019f09      0x2f7 Libraries/ssd1306.o
+ .debug_macro   0x000000000001a200       0x28 Libraries/ssd1306.o
+ .debug_macro   0x000000000001a228       0x16 Libraries/ssd1306.o
+ .debug_macro   0x000000000001a23e       0x20 Libraries/ssd1306.o
+ .debug_macro   0x000000000001a25e       0x76 Libraries/ssd1306_fonts.o
 
-.debug_line     0x0000000000000000    0x137f2
- .debug_line    0x0000000000000000      0xd15 Core/Src/main.o
- .debug_line    0x0000000000000d15      0x812 Core/Src/stm32f1xx_hal_msp.o
- .debug_line    0x0000000000001527      0x793 Core/Src/stm32f1xx_it.o
- .debug_line    0x0000000000001cba      0x7d5 Core/Src/syscalls.o
- .debug_line    0x000000000000248f      0x4cb Core/Src/sysmem.o
- .debug_line    0x000000000000295a      0x71f Core/Src/system_stm32f1xx.o
- .debug_line    0x0000000000003079       0x84 Core/Startup/startup_stm32f103c8tx.o
- .debug_line    0x00000000000030fd      0x94c Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
- .debug_line    0x0000000000003a49      0xfac Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.o
- .debug_line    0x00000000000049f5      0xb34 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
- .debug_line    0x0000000000005529      0x9e3 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o
- .debug_line    0x0000000000005f0c     0x394e Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.o
- .debug_line    0x000000000000985a      0xd5a Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
- .debug_line    0x000000000000a5b4      0x898 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o
- .debug_line    0x000000000000ae4c     0x32f4 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o
- .debug_line    0x000000000000e140     0x19f2 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o
- .debug_line    0x000000000000fb32     0x1756 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o
- .debug_line    0x0000000000011288      0x414 ssd1306/FIRFilter.o
- .debug_line    0x000000000001169c      0x85a ssd1306/angles.o
- .debug_line    0x0000000000011ef6      0x803 ssd1306/mpu6050.o
- .debug_line    0x00000000000126f9      0xd7e ssd1306/ssd1306.o
- .debug_line    0x0000000000013477      0x37b ssd1306/ssd1306_fonts.o
+.debug_line     0x0000000000000000    0x137fe
+ .debug_line    0x0000000000000000      0xd17 Core/Src/main.o
+ .debug_line    0x0000000000000d17      0x812 Core/Src/stm32f1xx_hal_msp.o
+ .debug_line    0x0000000000001529      0x793 Core/Src/stm32f1xx_it.o
+ .debug_line    0x0000000000001cbc      0x7d5 Core/Src/syscalls.o
+ .debug_line    0x0000000000002491      0x4cb Core/Src/sysmem.o
+ .debug_line    0x000000000000295c      0x71f Core/Src/system_stm32f1xx.o
+ .debug_line    0x000000000000307b       0x84 Core/Startup/startup_stm32f103c8tx.o
+ .debug_line    0x00000000000030ff      0x94c Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
+ .debug_line    0x0000000000003a4b      0xfac Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.o
+ .debug_line    0x00000000000049f7      0xb34 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
+ .debug_line    0x000000000000552b      0x9e3 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o
+ .debug_line    0x0000000000005f0e     0x394e Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.o
+ .debug_line    0x000000000000985c      0xd5a Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
+ .debug_line    0x000000000000a5b6      0x898 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o
+ .debug_line    0x000000000000ae4e     0x32f4 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o
+ .debug_line    0x000000000000e142     0x19f2 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o
+ .debug_line    0x000000000000fb34     0x1756 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o
+ .debug_line    0x000000000001128a      0x416 Libraries/FIRFilter.o
+ .debug_line    0x00000000000116a0      0x85c Libraries/angles.o
+ .debug_line    0x0000000000011efc      0x805 Libraries/mpu6050.o
+ .debug_line    0x0000000000012701      0xd80 Libraries/ssd1306.o
+ .debug_line    0x0000000000013481      0x37d Libraries/ssd1306_fonts.o
 
-.debug_str      0x0000000000000000    0x93b2f
+.debug_str      0x0000000000000000    0x93b39
  .debug_str     0x0000000000000000    0x8e75b Core/Src/main.o
                                       0x8ed03 (size before relaxing)
  .debug_str     0x000000000008e75b      0x36c Core/Src/stm32f1xx_hal_msp.o
@@ -5282,16 +5282,16 @@ LOAD /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.g
                                       0x89e13 (size before relaxing)
  .debug_str     0x000000000009318b      0x51e Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o
                                       0x89b6d (size before relaxing)
- .debug_str     0x00000000000936a9       0x55 ssd1306/FIRFilter.o
-                                       0x3d20 (size before relaxing)
- .debug_str     0x00000000000936fe       0x22 ssd1306/angles.o
-                                      0x8d1a2 (size before relaxing)
- .debug_str     0x0000000000093720       0x3d ssd1306/mpu6050.o
-                                      0x89a3d (size before relaxing)
- .debug_str     0x000000000009375d      0x3a4 ssd1306/ssd1306.o
-                                      0x8d6f4 (size before relaxing)
- .debug_str     0x0000000000093b01       0x2e ssd1306/ssd1306_fonts.o
-                                       0x3dc8 (size before relaxing)
+ .debug_str     0x00000000000936a9       0x57 Libraries/FIRFilter.o
+                                       0x3d22 (size before relaxing)
+ .debug_str     0x0000000000093700       0x24 Libraries/angles.o
+                                      0x8d1a4 (size before relaxing)
+ .debug_str     0x0000000000093724       0x3f Libraries/mpu6050.o
+                                      0x89a3f (size before relaxing)
+ .debug_str     0x0000000000093763      0x3a6 Libraries/ssd1306.o
+                                      0x8d6f6 (size before relaxing)
+ .debug_str     0x0000000000093b09       0x30 Libraries/ssd1306_fonts.o
+                                       0x3dca (size before relaxing)
 
 .comment        0x0000000000000000       0x53
  .comment       0x0000000000000000       0x53 Core/Src/main.o
@@ -5311,11 +5311,11 @@ LOAD /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.g
  .comment       0x0000000000000053       0x54 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o
  .comment       0x0000000000000053       0x54 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o
  .comment       0x0000000000000053       0x54 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o
- .comment       0x0000000000000053       0x54 ssd1306/FIRFilter.o
- .comment       0x0000000000000053       0x54 ssd1306/angles.o
- .comment       0x0000000000000053       0x54 ssd1306/mpu6050.o
- .comment       0x0000000000000053       0x54 ssd1306/ssd1306.o
- .comment       0x0000000000000053       0x54 ssd1306/ssd1306_fonts.o
+ .comment       0x0000000000000053       0x54 Libraries/FIRFilter.o
+ .comment       0x0000000000000053       0x54 Libraries/angles.o
+ .comment       0x0000000000000053       0x54 Libraries/mpu6050.o
+ .comment       0x0000000000000053       0x54 Libraries/ssd1306.o
+ .comment       0x0000000000000053       0x54 Libraries/ssd1306_fonts.o
 
 .debug_frame    0x0000000000000000     0x5e1c
  .debug_frame   0x0000000000000000      0x1cc Core/Src/main.o
@@ -5334,10 +5334,10 @@ LOAD /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.g
  .debug_frame   0x0000000000002340     0x11b8 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o
  .debug_frame   0x00000000000034f8      0x638 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o
  .debug_frame   0x0000000000003b30      0x834 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o
- .debug_frame   0x0000000000004364       0x60 ssd1306/FIRFilter.o
- .debug_frame   0x00000000000043c4       0x40 ssd1306/angles.o
- .debug_frame   0x0000000000004404       0x5c ssd1306/mpu6050.o
- .debug_frame   0x0000000000004460      0x340 ssd1306/ssd1306.o
+ .debug_frame   0x0000000000004364       0x60 Libraries/FIRFilter.o
+ .debug_frame   0x00000000000043c4       0x40 Libraries/angles.o
+ .debug_frame   0x0000000000004404       0x5c Libraries/mpu6050.o
+ .debug_frame   0x0000000000004460      0x340 Libraries/ssd1306.o
  .debug_frame   0x00000000000047a0       0x20 /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-errno.o)
  .debug_frame   0x00000000000047c0       0x2c /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-init.o)
  .debug_frame   0x00000000000047ec       0x28 /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-memcpy-stub.o)
