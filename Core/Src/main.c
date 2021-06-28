@@ -163,11 +163,27 @@ int main(void)
 	switch(display_mode)
 	{
 		case 1:
+
 			bubbleLevel_1d(angles.yx);
+
+			if((angles.yx > -0.3) && (angles.yx < 0.3) )
+				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, 0);
+
+			else
+				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, 1);
+
 			break;
 
 		case 2:
+
 			bubbleLevel_2d(angles.yz, angles.xz);
+
+			if((angles.yz > -0.3) && (angles.yz < 0.3) && (angles.xz > -0.3) && (angles.xz < 0.3) )
+				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, 0);
+
+			else
+				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, 1);
+
 			break;
 	}
 
@@ -178,7 +194,6 @@ int main(void)
 		HAL_TIM_Base_Start_IT(&htim2);
 
   }
-
 
   /* USER CODE END 3 */
 }
