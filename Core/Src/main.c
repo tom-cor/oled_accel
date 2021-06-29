@@ -622,11 +622,11 @@ static void bubbleLevel_2d(float angle_xz, float angle_yz)
 	#define COLOR 	1
 	#define FONT	Font_7x10
 
-	char  MSG0[7] = "";
-	char  MSG1[7] = "";
+	char  MSG0[10] = "";
+	char  MSG1[10] = "";
 
-	sprintf(MSG0, "%+4.1f", angle_xz);
-	sprintf(MSG1, "%+4.1f", angle_yz);
+	sprintf(MSG0, "X: %+.1f", angle_xz);
+	sprintf(MSG1, "Y: %+.1f", angle_yz);
 
 	uint8_t x0 = 95;
 	uint8_t y0 = 32;
@@ -660,9 +660,9 @@ static void bubbleLevel_2d(float angle_xz, float angle_yz)
 	ssd1306_DrawRectangle(89, 26, 101, 38, COLOR);
 	ssd1306_DrawCircle(x0, y0, 5, COLOR);
 	ssd1306_DrawCircle(x0+2, y0-2, 1, COLOR);
-	ssd1306_SetCursor(1, 1);
+	ssd1306_SetCursor(1, 12);
 	ssd1306_WriteString(MSG0, FONT, COLOR);
-	ssd1306_SetCursor(1, 30);
+	ssd1306_SetCursor(1, 42);
 	ssd1306_WriteString(MSG1, FONT, COLOR);
 	ssd1306_UpdateScreen();
 
