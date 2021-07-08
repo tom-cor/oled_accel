@@ -7,6 +7,7 @@
 C_SRCS += \
 ../Libraries/FIRFilter.c \
 ../Libraries/angles.c \
+../Libraries/gui_multitool.c \
 ../Libraries/mpu6050.c \
 ../Libraries/ssd1306.c \
 ../Libraries/ssd1306_fonts.c 
@@ -14,6 +15,7 @@ C_SRCS += \
 OBJS += \
 ./Libraries/FIRFilter.o \
 ./Libraries/angles.o \
+./Libraries/gui_multitool.o \
 ./Libraries/mpu6050.o \
 ./Libraries/ssd1306.o \
 ./Libraries/ssd1306_fonts.o 
@@ -21,6 +23,7 @@ OBJS += \
 C_DEPS += \
 ./Libraries/FIRFilter.d \
 ./Libraries/angles.d \
+./Libraries/gui_multitool.d \
 ./Libraries/mpu6050.d \
 ./Libraries/ssd1306.d \
 ./Libraries/ssd1306_fonts.d 
@@ -31,6 +34,8 @@ Libraries/FIRFilter.o: ../Libraries/FIRFilter.c Libraries/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"/home/tomas/Dropbox/STM32CubeIDE/workspace_1.6.1/oled_accel/Libraries" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Libraries/FIRFilter.d" -MT"$@" --specs=nano.specs -mfloat-abi=soft -mthumb -o "$@"
 Libraries/angles.o: ../Libraries/angles.c Libraries/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"/home/tomas/Dropbox/STM32CubeIDE/workspace_1.6.1/oled_accel/Libraries" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Libraries/angles.d" -MT"$@" --specs=nano.specs -mfloat-abi=soft -mthumb -o "$@"
+Libraries/gui_multitool.o: ../Libraries/gui_multitool.c Libraries/subdir.mk
+	arm-none-eabi-gcc "$<" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"/home/tomas/Dropbox/STM32CubeIDE/workspace_1.6.1/oled_accel/Libraries" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Libraries/gui_multitool.d" -MT"$@" --specs=nano.specs -mfloat-abi=soft -mthumb -o "$@"
 Libraries/mpu6050.o: ../Libraries/mpu6050.c Libraries/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"/home/tomas/Dropbox/STM32CubeIDE/workspace_1.6.1/oled_accel/Libraries" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Libraries/mpu6050.d" -MT"$@" --specs=nano.specs -mfloat-abi=soft -mthumb -o "$@"
 Libraries/ssd1306.o: ../Libraries/ssd1306.c Libraries/subdir.mk

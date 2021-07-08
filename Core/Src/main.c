@@ -28,6 +28,7 @@
 #include "../../Libraries/FIRFilter.h"
 #include "../../Libraries/mpu6050.h"
 #include "../../Libraries/angles.h"
+#include "../../Libraries/gui_multitool.h"
 #include "math.h"
 #include "stdio.h"
 
@@ -87,15 +88,11 @@ static void MX_TIM3_Init(void);
 /* USER CODE BEGIN PFP */
 
 
-//static void bubbleLevel_ArtifHorizon(int16_t angle);
-static void bubbleLevel_2d(float angle_xz, float angle_yz);
-static void bubbleLevel_1d(float angle);
-
-
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
 {
@@ -123,130 +120,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
 
 }
 
-//static void bubbleLevel_ArtifHorizon(int16_t angle)
-//{
-//	static uint16_t x1, y1, x2, y2;
-//	static uint16_t radius = 31;
-//	static uint16_t x0 = 96;
-//	static uint16_t y0 = 32;
-//	static char  MSG0[4] = "";
-//	static char MSG1[2] = " +";
-//
-//	x2 = radius*cos((angle*PI)/180) + x0;
-//	y2 = radius*sin((angle*PI)/180) + y0;
-//	x1 = 2*x0 - x2;
-//	y1 = 2*y0 - y2;
-//
-//	if(angle < 0)
-//	{
-//		MSG1[1] = '-';
-//		angle *= (-1);
-//	}
-//	else
-//		MSG1[1] = '+';
-//
-//	sprintf(MSG0, "%03d", angle);
-//
-//	ssd1306_Fill(Black);
-//	//ssd1306_SetCursor(5, 19);
-//	ssd1306_SetCursor(5, 2);
-//	ssd1306_WriteString(MSG1, Font_16x26, White);
-//	ssd1306_SetCursor(5, 34);
-//	ssd1306_WriteString(MSG0, Font_16x26, White);
-//	ssd1306_DrawCircle(x0, y0, radius, White);
-//	ssd1306_Line(x1, y2, x2, y1, White);
-//	ssd1306_UpdateScreen();
-//}
-
-
-static void bubbleLevel_1d(float angle)
-{
-
-	#define COLOR	1
-
-	char  MSG0[7] = "";
-
-	static uint8_t radius = 9;
-	static int16_t x0;
-	const uint8_t y0 = 52;
-	const uint8_t x1 = 10;
-	const uint8_t x2 = 120;
-
-	//angle = -170;
-
-	//x0 = ((angle + 180)/360.0)*(x2 - x1 - 2*(radius + 1)) + (x1 + radius +1);
-	//x0 = (angle/60.0)*45.0 + 65;
-	x0 = (angle/60.0)*(x2 - (radius+1) - (x2 + x1)/2) + (x2 + x1)/2;
-
-	if( (x0 - (radius +1)) <= x1 )
-		x0 = x1 + (radius + 1);
-										//	SON NECESARIOS ESTOS LÍMITES?
-	if( (x0 + (radius +1)) >= x2 )
-		x0 = x2 - (radius + 1);
-
-	sprintf(MSG0, "%+4.1f", angle);
-
-	ssd1306_Fill(!COLOR);
-	ssd1306_DrawRectangle(x1, y0 - (radius + 1), x2, y0 + (radius +1), COLOR);
-	ssd1306_DrawCircle(x0, y0, radius, COLOR);
-	ssd1306_DrawCircle(x0+3, y0-3, 2, COLOR);
-	ssd1306_SetCursor(26, 8);
-	ssd1306_WriteString(MSG0, Font_16x26, COLOR);
-	ssd1306_UpdateScreen();
-
-}
-
-static void bubbleLevel_2d(float angle_xz, float angle_yz)
-{
-
-	#define COLOR 	1
-	#define FONT	Font_7x10
-
-	char  MSG0[10] = "";
-	char  MSG1[10] = "";
-
-	sprintf(MSG0, "X: %+.1f", angle_xz);
-	sprintf(MSG1, "Y: %+.1f", angle_yz);
-
-	uint8_t x0 = 95;
-	uint8_t y0 = 32;
-
-//	x0 += angle_xz;
-//	y0 += angle_yz;
-
-	//	CONVERSION A COORDENADAS POLARES
-
-	float radius;
-	float theta;
-
-	//radius = sqrt(pow(angle_yz, 2) + pow(angle_xz, 2));
-	radius = sqrt(angle_yz*angle_yz + angle_xz*angle_xz);
-
-	if(radius > 26)
-		radius = 26;
-
-	theta = atan2(angle_xz, angle_yz);
-
-	x0 += radius * sin(theta);
-	y0 -= radius * cos(theta);
-
-	//	FIN CONVERSION A COORDENADAS POLARES
-
-	ssd1306_Fill(!COLOR);
-	ssd1306_DrawCircle(95, 32, 31, COLOR);
-	//ssd1306_DrawRectangle(63, 1, 126, 63, COLOR);	//	Descomentar en caso de no usar coordenadas polares
-	ssd1306_Line(64, 32, 126, 32, COLOR);
-	ssd1306_Line(95, 1, 95, 63, COLOR);
-	ssd1306_DrawRectangle(89, 26, 101, 38, COLOR);
-	ssd1306_DrawCircle(x0, y0, 5, COLOR);
-	ssd1306_DrawCircle(x0+2, y0-2, 1, COLOR);
-	ssd1306_SetCursor(1, 12);
-	ssd1306_WriteString(MSG0, FONT, COLOR);
-	ssd1306_SetCursor(1, 42);
-	ssd1306_WriteString(MSG1, FONT, COLOR);
-	ssd1306_UpdateScreen();
-
-}
 
 /* USER CODE END 0 */
 
@@ -291,11 +164,13 @@ int main(void)
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
 
-  ssd1306_Init();
-  ssd1306_WelcomeScreen();
-  HAL_Delay(3000);
 
   mpu6050_Init(&mpu6050);
+  ssd1306_Init();
+  gui_Init();
+
+  gui_WelcomeScreen();
+  HAL_Delay(3000);
 
   HAL_TIM_Base_Start_IT(&htim3);
 
@@ -315,7 +190,7 @@ int main(void)
 	{
 		case 1:
 
-			bubbleLevel_1d(angles.yx);
+			gui_Bubble_1d(angles.yx);
 
 			if((angles.yx > -0.3) && (angles.yx < 0.3) )
 				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, 0);
@@ -327,7 +202,7 @@ int main(void)
 
 		case 2:
 
-			bubbleLevel_2d(angles.yz, angles.xz);
+			gui_Bubble_2d(angles.yz, angles.xz);
 
 			if((angles.yz > -0.3) && (angles.yz < 0.3) && (angles.xz > -0.3) && (angles.xz < 0.3) )
 				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, 0);

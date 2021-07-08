@@ -24,6 +24,7 @@
 "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o"
 "Libraries/FIRFilter.o"
 "Libraries/angles.o"
+"Libraries/gui_multitool.o"
 "Libraries/mpu6050.o"
 "Libraries/ssd1306.o"
 "Libraries/ssd1306_fonts.o"

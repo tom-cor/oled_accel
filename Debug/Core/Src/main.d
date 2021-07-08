@@ -35,7 +35,9 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Core/Src/../../Libraries/mpu6050_conf.h \
  ../Core/Src/../../Libraries/angles.h \
  ../Core/Src/../../Libraries/mpu6050.h \
- ../Core/Src/../../Libraries/FIRFilter.h
+ ../Core/Src/../../Libraries/FIRFilter.h \
+ ../Core/Src/../../Libraries/gui_multitool.h \
+ ../Core/Src/../../Libraries/ssd1306.h
 
 ../Core/Inc/main.h:
 
@@ -112,3 +114,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Core/Src/../../Libraries/mpu6050.h:
 
 ../Core/Src/../../Libraries/FIRFilter.h:
+
+../Core/Src/../../Libraries/gui_multitool.h:
+
+../Core/Src/../../Libraries/ssd1306.h:

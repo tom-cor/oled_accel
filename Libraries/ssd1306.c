@@ -444,30 +444,6 @@ void ssd1306_DrawRectangle(uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2, SSD13
   return;
 }
 
-
-void ssd1306_WelcomeScreen(void)
-{
-//	ssd1306_Fill(Black);
-//	ssd1306_SetCursor(1, 11);
-//	ssd1306_WriteString("Proyecto final", Font_7x10, White);
-//	ssd1306_SetCursor(1, 27);
-//	ssd1306_WriteString("Sistemas Embebidos", Font_7x10, White);
-//	ssd1306_SetCursor(1, 43);
-//	ssd1306_WriteString("Tomas Cornaglia", Font_7x10, White);
-//	ssd1306_UpdateScreen();
-
-	ssd1306_Fill(Black);
-	ssd1306_SetCursor(1, 3);
-	ssd1306_WriteString("Sistemas Embebidos", Font_7x10, White);
-	ssd1306_SetCursor(1, 19);
-	ssd1306_WriteString("Proyecto final:", Font_7x10, White);
-	ssd1306_SetCursor(1, 35);
-	ssd1306_WriteString("NIVEL DE BURBUJA", Font_7x10, White);
-	ssd1306_SetCursor(1, 51);
-	ssd1306_WriteString("Tomas Cornaglia", Font_7x10, White);
-	ssd1306_UpdateScreen();
-}
-
 void ssd1306_SetContrast(const uint8_t value) {
     const uint8_t kSetContrastControlRegister = 0x81;
     ssd1306_WriteCommand(kSetContrastControlRegister);
