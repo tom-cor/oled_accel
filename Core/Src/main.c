@@ -113,7 +113,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
 
 	if(htim->Instance==TIM3)	//	Si intrerrupcion proviene de TIM3 -> lectura de MPU6050
 	{
-		mpu6050_Get_Accel(&mpu6050);
+		mpu6050_Get_Accel_Temp(&mpu6050);
 
 		angles_update(&mpu6050, &angles);
 	}
@@ -190,25 +190,25 @@ int main(void)
 	{
 		case 1:
 
-			gui_Bubble_1d(angles.yx);
-
 			if((angles.yx > -0.3) && (angles.yx < 0.3) )
 				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, 0);
 
 			else
 				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, 1);
 
+			gui_Bubble_1d(angles.yx, mpu6050.temp);
+
 			break;
 
 		case 2:
-
-			gui_Bubble_2d(angles.yz, angles.xz);
 
 			if((angles.yz > -0.3) && (angles.yz < 0.3) && (angles.xz > -0.3) && (angles.xz < 0.3) )
 				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, 0);
 
 			else
 				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, 1);
+
+			gui_Bubble_2d(angles.yz, angles.xz, mpu6050.temp);
 
 			break;
 	}

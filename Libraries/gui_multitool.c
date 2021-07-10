@@ -30,47 +30,42 @@ void gui_WelcomeScreen(void)
 
 }
 
-void gui_Bubble_1d(float angle)
+void gui_Bubble_1d(float angle, float temp)
 {
-
-	static uint8_t radius = 9;
+	static uint8_t radius = 7;
 	static int16_t x0;
 	const uint8_t y0 = 52;
 	const uint8_t x1 = 10;
 	const uint8_t x2 = 120;
 
-	//angle = -170;
+	x0 = (angle / 60.0) * (x2 - (radius + 1) - (x2 + x1) / 2) + (x2 + x1) / 2;
 
-	//x0 = ((angle + 180)/360.0)*(x2 - x1 - 2*(radius + 1)) + (x1 + radius +1);
-	//x0 = (angle/60.0)*45.0 + 65;
-	x0 = (angle/60.0)*(x2 - (radius+1) - (x2 + x1)/2) + (x2 + x1)/2;
-
-	if( (x0 - (radius +1)) <= x1 )
+	if ((x0 - (radius + 1)) <= x1)
 		x0 = x1 + (radius + 1);
-										//	SON NECESARIOS ESTOS LÍMITES?
-	if( (x0 + (radius +1)) >= x2 )
+
+	if ((x0 + (radius + 1)) >= x2)
 		x0 = x2 - (radius + 1);
 
-	sprintf(MSG0, "%+4.1f", angle);
-
 	ssd1306_Fill(Black);
-	ssd1306_DrawRectangle(x1, y0 - (radius + 1), x2, y0 + (radius +1), White);
+	ssd1306_DrawRectangle(x1, y0 - (radius + 1), x2, y0 + (radius + 1), White);
 	ssd1306_DrawCircle(x0, y0, radius, White);
-	ssd1306_DrawCircle(x0+3, y0-3, 2, White);
-	ssd1306_SetCursor(26, 8);
+	ssd1306_DrawCircle(x0 + 3, y0 - 3, 2, White);
+
+	sprintf(MSG0, "%+.1f", angle);
+	ssd1306_SetCursor(26, 15);
 	ssd1306_WriteString(MSG0, Font_16x26, White);
+
+	sprintf(MSG0, "%+.1fC", temp);
+	ssd1306_SetCursor(1, 1);
+	ssd1306_WriteString(MSG0, Font_6x8, White);
+
 	ssd1306_UpdateScreen();
 
 	return;
-
 }
 
-void gui_Bubble_2d(float angle_xz, float angle_yz)
+void gui_Bubble_2d(float angle_xz, float angle_yz, float temp)
 {
-
-	sprintf(MSG0, "X: %+.1f", angle_xz);
-	sprintf(MSG1, "Y: %+.1f", angle_yz);
-
 	uint8_t x0 = 95;
 	uint8_t y0 = 32;
 
@@ -82,7 +77,6 @@ void gui_Bubble_2d(float angle_xz, float angle_yz)
 	float radius;
 	float theta;
 
-	//radius = sqrt(pow(angle_yz, 2) + pow(angle_xz, 2));
 	radius = sqrt(angle_yz*angle_yz + angle_xz*angle_xz);
 
 	if(radius > 26)
@@ -103,15 +97,24 @@ void gui_Bubble_2d(float angle_xz, float angle_yz)
 	ssd1306_DrawRectangle(89, 26, 101, 38, White);
 	ssd1306_DrawCircle(x0, y0, 5, White);
 	ssd1306_DrawCircle(x0+2, y0-2, 1, White);
-	ssd1306_SetCursor(1, 12);
+
+	sprintf(MSG0, "X: %+.1f", angle_xz);
+	ssd1306_SetCursor(1, 28);
 	ssd1306_WriteString(MSG0, Font_7x10, White);
-	ssd1306_SetCursor(1, 42);
-	ssd1306_WriteString(MSG1, Font_7x10, White);
+
+	sprintf(MSG0, "Y: %+.1f", angle_yz);
+	ssd1306_SetCursor(1, 48);
+	ssd1306_WriteString(MSG0, Font_7x10, White);
+
+	sprintf(MSG0, "%+.1fC", temp);
+	ssd1306_SetCursor(1, 1);
+	ssd1306_WriteString(MSG0, Font_6x8, White);
+
 	ssd1306_UpdateScreen();
 
 	return;
-
 }
+
 
 //void bubbleLevel_ArtifHorizon(int16_t angle)
 //{

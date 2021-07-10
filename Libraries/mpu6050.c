@@ -41,3 +41,23 @@ void mpu6050_Get_Accel(MPU6050 *mpu6050)
 
 	return;
 }
+
+void mpu6050_Get_Accel_Temp(MPU6050 *mpu6050)
+{
+	HAL_I2C_Mem_Read(&MPU6050_I2C_PORT, MPU6050_ADDRESS | 0, ACCEL_XOUT_H_REG, 1, Rec_Data, 8, 1000);
+
+
+	raw.accel_x = (Rec_Data[0] << 8 | Rec_Data [1]);
+	raw.accel_y = (Rec_Data[2] << 8 | Rec_Data [3]);
+	raw.accel_z = (Rec_Data[4] << 8 | Rec_Data [5]);
+
+	raw.temp 	= (Rec_Data[6] << 8 | Rec_Data [7]);
+
+	mpu6050->accel_x = (float)raw.accel_x / 16384.0;
+	mpu6050->accel_y = (float)raw.accel_y / 16384.0;
+	mpu6050->accel_z = (float)raw.accel_z / 16384.0;
+
+	mpu6050->temp 	 = (float)raw.temp    / 340.0 + 36.53;
+
+	return;
+}

@@ -63,7 +63,8 @@ uint8_t Rec_Data[14];
 
 
 void mpu6050_Init (MPU6050 *mpu6050);
-void mpu6050_Get_Accel(MPU6050 *mpu6050);
+void mpu6050_Get_Accel (MPU6050 *mpu6050);
+void mpu6050_Get_Accel_Temp (MPU6050 *mpu6050);
 
 _END_STD_C
 
