@@ -11,6 +11,8 @@ RAW_DATA raw;
 
 void mpu6050_Init (MPU6050 *mpu6050)
 {
+	HAL_Delay(100);
+
 	mpu6050->accel_x = 0;
 	mpu6050->accel_y = 0;
 	mpu6050->accel_z = 0;
@@ -22,6 +24,8 @@ void mpu6050_Init (MPU6050 *mpu6050)
 	mpu6050->gyro_z = 0;
 
 	HAL_I2C_Mem_Write(&hi2c1, MPU6050_ADDRESS | 0, PWRMNGT1_REG, 1, 0x00, 1, 100);
+
+	HAL_Delay(100);
 
 	return;
 }
