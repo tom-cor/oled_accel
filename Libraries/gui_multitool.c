@@ -115,6 +115,18 @@ void gui_Bubble_2d(float angle_xz, float angle_yz, float temp)
 	return;
 }
 
+void gui_Distance (uint16_t distance, float temp)
+{
+	ssd1306_Fill(Black);
+	sprintf(MSG0, "%d cm", distance);
+	ssd1306_SetCursor(20, 23);
+	ssd1306_WriteString(MSG0, Font_16x26, White);
+
+	sprintf(MSG0, "%+.1fC", temp);
+	ssd1306_SetCursor(1, 1);
+	ssd1306_WriteString(MSG0, Font_6x8, White);
+}
+
 
 //void bubbleLevel_ArtifHorizon(int16_t angle)
 //{

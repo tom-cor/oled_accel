@@ -10,7 +10,6 @@
 
 #include <stdio.h>
 #include <math.h>
-#include "mpu6050.h"
 #include "ssd1306.h"
 
 char MSG0[10];
@@ -19,6 +18,7 @@ void gui_Init (void);
 void gui_WelcomeScreen (void);
 void gui_Bubble_1d (float angle, float temp);
 void gui_Bubble_2d (float angle_xz, float angle_yz, float temp);
+void gui_Distance (uint16_t distance, float temp);
 //void bubbleLevel_ArtifHorizon(int16_t angle);
 
 
