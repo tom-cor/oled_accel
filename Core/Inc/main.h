@@ -63,7 +63,7 @@ void Error_Handler(void);
 #define Button_Pin GPIO_PIN_15
 #define Button_GPIO_Port GPIOB
 #define Button_EXTI_IRQn EXTI15_10_IRQn
-#define CaptureTrigger_Pin GPIO_PIN_9
+#define CaptureTrigger_Pin GPIO_PIN_10
 #define CaptureTrigger_GPIO_Port GPIOA
 /* USER CODE BEGIN Private defines */
 
