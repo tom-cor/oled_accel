@@ -97,6 +97,7 @@ uint8_t intButton;
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
 	intButton = 1;
+	__HAL_TIM_SET_COUNTER(&htim2, 0);  // reset the counter
 	HAL_TIM_Base_Start_IT(&htim2);
 }
 
@@ -105,7 +106,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
 {
 	if(htim->Instance == TIM2)	//	Si la interrupcion proviene de TIM2 -> cambio de modo de display
 	{
-
+		HAL_TIM_Base_Stop_IT(&htim2);
 		if(intButton == 1)		//	Si se presionó el botón por más de dos segundos, cambiar de dist a ángulo o viceversa, según corresponda
 		{
 			intButton = 0;
@@ -133,8 +134,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
 			if(az_filter.out > 0.8)
 				display_mode = 2;
 		}
-
-		HAL_TIM_Base_Stop_IT(&htim2);
 	}
 
 	if(htim->Instance == TIM3)	//	Si la interrupcion proviene de TIM3 -> lectura de MPU6050
@@ -145,17 +144,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
 
 }
 
-
-
-
-// Let's write the callback function
-
 void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 {
 	distance = HCSR04_Read_ISR(htim);
 }
-
-
 
 
 /* USER CODE END 0 */
@@ -206,8 +198,7 @@ int main(void)
   gui_Init();
 
   gui_WelcomeScreen();
-  //HAL_Delay(3000);
-  HAL_Delay(200);
+  HAL_Delay(3000);
 
   HAL_TIM_Base_Start_IT(&htim3);
   HAL_TIM_IC_Start_IT(&htim1, TIM_CHANNEL_1);
@@ -271,6 +262,7 @@ int main(void)
 		  HAL_Delay(60);
 	}
   }
+
 
   /* USER CODE END 3 */
 }
@@ -454,9 +446,9 @@ static void MX_TIM2_Init(void)
 
   /* USER CODE END TIM2_Init 1 */
   htim2.Instance = TIM2;
-  htim2.Init.Prescaler = 10000;
+  htim2.Init.Prescaler = 7200 - 1;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 7200;
+  htim2.Init.Period = 5000;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
   if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
@@ -556,7 +548,7 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin : Button_Pin */
   GPIO_InitStruct.Pin = Button_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
-  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(Button_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : CaptureTrigger_Pin */
