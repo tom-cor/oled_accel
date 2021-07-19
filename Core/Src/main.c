@@ -29,6 +29,7 @@
 #include "../../Libraries/mpu6050.h"
 #include "../../Libraries/angles.h"
 #include "../../Libraries/gui_multitool.h"
+//#include "../../Libraries/hc-sr04.h"
 #include "math.h"
 #include "stdio.h"
 
@@ -100,10 +101,6 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
 {
-
-//
-//	HAL_TIM_Base_Stop_IT(&htim2);
-
 	if(htim->Instance == TIM2)	//	Si la interrupcion proviene de TIM2 -> cambio de modo de display
 	{
 
@@ -140,16 +137,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
 
 	if(htim->Instance == TIM3)	//	Si la interrupcion proviene de TIM3 -> lectura de MPU6050
 	{
-//		if(display_mode == 3)
-//		{
-//			mpu6050_Get_Accel_Temp(&mpu6050);
-//		}
-//		else
-//		{
-//			mpu6050_Get_Accel_Temp(&mpu6050);
-//			angles_update(&mpu6050, &angles);
-//		}
-
 		mpu6050_Get_Accel_Temp(&mpu6050);
 		angles_update(&mpu6050, &angles);
 	}
@@ -176,38 +163,28 @@ uint16_t distance  = 0;
 
 void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 {
+	//HCSR04_Read_ISR(htim);
 	if (htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1)  // if the interrupt source is channel1
 	{
-		if (is_first_captured==0) // if the first value is not captured
+		captured_1 = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_1); // read the first value
+	}
+
+	if (htim->Channel == HAL_TIM_ACTIVE_CHANNEL_2)
+	{
+		captured_2 = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_2);  // read second value
+		__HAL_TIM_SET_COUNTER(htim, 0);  // reset the counter
+
+		if (captured_2 > captured_1)
 		{
-			captured_1 = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_1); // read the first value
-			is_first_captured = 1;  // set the first captured as true
-			// Now change the polarity to falling edge
-			__HAL_TIM_SET_CAPTUREPOLARITY(htim, TIM_CHANNEL_1, TIM_INPUTCHANNELPOLARITY_FALLING);
+			difference = captured_2-captured_1;
 		}
 
-		else if (is_first_captured==1)   // if the first is already captured
+		else if (captured_1 > captured_2)
 		{
-			captured_2 = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_1);  // read second value
-			__HAL_TIM_SET_COUNTER(htim, 0);  // reset the counter
-
-			if (captured_2 > captured_1)
-			{
-				difference = captured_2-captured_1;
-			}
-
-			else if (captured_1 > captured_2)
-			{
-				difference = (0xffff - captured_1) + captured_2;
-			}
-
-			distance = difference * .034/2;
-			is_first_captured = 0; // set it back to false
-
-			// set polarity to rising edge
-			__HAL_TIM_SET_CAPTUREPOLARITY(htim, TIM_CHANNEL_1, TIM_INPUTCHANNELPOLARITY_RISING);
-			__HAL_TIM_DISABLE_IT(&htim1, TIM_IT_CC1);
+			difference = (0xffff - captured_1) + captured_2;
 		}
+		distance = difference * .034/2;
+		__HAL_TIM_DISABLE_IT(&htim1, TIM_IT_CC1);
 	}
 }
 
@@ -274,6 +251,7 @@ int main(void)
 
   HAL_TIM_Base_Start_IT(&htim3);
   HAL_TIM_IC_Start_IT(&htim1, TIM_CHANNEL_1);
+  HAL_TIM_IC_Start_IT(&htim1, TIM_CHANNEL_2);
   HAL_Delay(200);
 
   if(az_filter.out < 0.2)
@@ -332,49 +310,6 @@ int main(void)
 		  ssd1306_UpdateScreen();
 		  HAL_Delay(60);
 	}
-
-
-//		switch(display_mode)
-//		{
-//			case 1:
-//
-//				if((angles.yx > -0.3) && (angles.yx < 0.3) )
-//					HAL_GPIO_WritePin(GPIOC, LED_Pin, 0);
-//				else
-//					HAL_GPIO_WritePin(GPIOC, LED_Pin, 1);
-//
-//				gui_Bubble_1d(angles.yx, mpu6050.temp);
-//				break;
-//
-//			case 2:
-//
-//				if((angles.yz > -0.3) && (angles.yz < 0.3) && (angles.xz > -0.3) && (angles.xz < 0.3) )
-//					HAL_GPIO_WritePin(GPIOC, LED_Pin, 0);
-//				else
-//					HAL_GPIO_WritePin(GPIOC, LED_Pin, 1);
-//
-//				gui_Bubble_2d(angles.yz, angles.xz, mpu6050.temp);
-//				break;
-//
-//			case 3:
-//
-//				  HCSR04_Read();
-//
-//				  gui_Distance (Distance, mpu6050.temp);
-//
-//				  ssd1306_UpdateScreen();
-//				  HAL_Delay(60);
-//				  break;
-//		}
-//
-//		if(display_mode != 3)
-//		{
-//			if( (az_filter.out < 0.3) && (display_mode != 1)  )	// Revisar como evaluar que el timer ya está corriendo, cosa de no iniciarlo más de una vez.
-//				HAL_TIM_Base_Start_IT(&htim2);
-//
-//			if( (az_filter.out > 0.7) && (display_mode != 2) )
-//				HAL_TIM_Base_Start_IT(&htim2);
-//		}
   }
 
   /* USER CODE END 3 */
@@ -526,6 +461,11 @@ static void MX_TIM1_Init(void)
   sConfigIC.ICPrescaler = TIM_ICPSC_DIV1;
   sConfigIC.ICFilter = 0;
   if (HAL_TIM_IC_ConfigChannel(&htim1, &sConfigIC, TIM_CHANNEL_1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_FALLING;
+  if (HAL_TIM_IC_ConfigChannel(&htim1, &sConfigIC, TIM_CHANNEL_2) != HAL_OK)
   {
     Error_Handler();
   }
