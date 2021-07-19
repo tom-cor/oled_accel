@@ -29,7 +29,7 @@
 #include "../../Libraries/mpu6050.h"
 #include "../../Libraries/angles.h"
 #include "../../Libraries/gui_multitool.h"
-//#include "../../Libraries/hc-sr04.h"
+#include "../../Libraries/hc-sr04.h"
 #include "math.h"
 #include "stdio.h"
 
@@ -70,6 +70,8 @@ char display_mode = 0;
 static MPU6050 mpu6050;
 
 static ANGLES angles;
+
+uint16_t distance;
 
 
 /* USER CODE END PV */
@@ -144,58 +146,16 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
 }
 
 
-void delay (uint16_t time)
-{
-	__HAL_TIM_SET_COUNTER(&htim1, 0);
-	while (__HAL_TIM_GET_COUNTER (&htim1) < time);
-}
 
-uint32_t captured_1 = 0;
-uint32_t captured_2 = 0;
-uint32_t difference = 0;
-uint16_t is_first_captured = 0;  // is the first value captured ?
-uint16_t distance  = 0;
-
-#define TRIG_PIN CaptureTrigger_Pin
-#define TRIG_PORT CaptureTrigger_GPIO_Port
 
 // Let's write the callback function
 
 void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 {
-	//HCSR04_Read_ISR(htim);
-	if (htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1)  // if the interrupt source is channel1
-	{
-		captured_1 = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_1); // read the first value
-	}
-
-	if (htim->Channel == HAL_TIM_ACTIVE_CHANNEL_2)
-	{
-		captured_2 = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_2);  // read second value
-		__HAL_TIM_SET_COUNTER(htim, 0);  // reset the counter
-
-		if (captured_2 > captured_1)
-		{
-			difference = captured_2-captured_1;
-		}
-
-		else if (captured_1 > captured_2)
-		{
-			difference = (0xffff - captured_1) + captured_2;
-		}
-		distance = difference * .034/2;
-		__HAL_TIM_DISABLE_IT(&htim1, TIM_IT_CC1);
-	}
+	distance = HCSR04_Read_ISR(htim);
 }
 
-void HCSR04_Read (void)
-{
-	HAL_GPIO_WritePin(TRIG_PORT, TRIG_PIN, GPIO_PIN_SET);  // pull the TRIG pin HIGH
-	delay(10);  // wait for 10 us
-	HAL_GPIO_WritePin(TRIG_PORT, TRIG_PIN, GPIO_PIN_RESET);  // pull the TRIG pin low
 
-	__HAL_TIM_ENABLE_IT(&htim1, TIM_IT_CC1);
-}
 
 
 /* USER CODE END 0 */
