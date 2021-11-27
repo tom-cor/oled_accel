@@ -96,7 +96,8 @@ uint8_t intButton;
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-	intButton = 1;
+	if(!HAL_GPIO_ReadPin(Button_GPIO_Port, Button_Pin))
+		intButton = 1;
 	__HAL_TIM_SET_COUNTER(&htim2, 0);  // reset the counter
 	HAL_TIM_Base_Start_IT(&htim2);
 }
@@ -111,18 +112,20 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
 		{
 			intButton = 0;
 
-			if(display_mode == 3)
+			if(!HAL_GPIO_ReadPin(Button_GPIO_Port, Button_Pin))
 			{
-				if(az_filter.out < 0.2)
-					display_mode = 1;
+				if(display_mode == 3)
+				{
+					if(az_filter.out < 0.2)
+						display_mode = 1;
 
-				if(az_filter.out > 0.8)
-					display_mode = 2;
-			}
-			else
-			{
-				if(HAL_GPIO_ReadPin(Button_GPIO_Port, Button_Pin))
+					if(az_filter.out > 0.8)
+						display_mode = 2;
+				}
+				else
+				{
 					display_mode = 3;
+				}
 			}
 		}
 
@@ -547,7 +550,7 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin : Button_Pin */
   GPIO_InitStruct.Pin = Button_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(Button_GPIO_Port, &GPIO_InitStruct);
 
